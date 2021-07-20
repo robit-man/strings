@@ -1,6 +1,7 @@
 <script>
 import { onMount } from "svelte";
-
+import { slide } from 'svelte/transition';
+import { Router, Link, Route } from "svelte-routing";
 
 
 </script>
@@ -11,17 +12,17 @@ import { onMount } from "svelte";
 
         <div class="top">
             <div class="section-padding full-width light">
-                <div class="inner-data" style="
+                <div transition:slide  class="inner-data" style="
                 position: relative;
                 z-index: 1;">
-                    <h1>Decentralized Generative Pre-Trained Transformers</h1>
+                    <h1 >Decentralized Generative Pre-Trained Transformers</h1>
                     <div class="description">
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">DGPT-1 is architected to be the largest non-sparse autoregressive language built through decentralized deep learning models</h3>
                     <a href="https://xiprotocol.io/#/"><button>POWERED BY XI</button></a></div>
                 </div>
                 <div class="arrow"><img src="/imgs/hyper.gif" alt=""></div>
                 <canvas style="filter: brightness(10)contrast(1);
-                position: relative;
+                position: absolute;
                 z-index: 0;
                 " id="dotty"></canvas>
                 <script src="https://pointblank.company/network.js"></script>
@@ -30,12 +31,17 @@ import { onMount } from "svelte";
         </div>
         <div class="info-center">
             <h1>No Rights Reserved</h1>
+            <div class="about">
+                <Link style="color:white!important;font-weight:700;top: 3px;
+                position: absolute;
+                left: 26px;z-index:5;" to="about">ABOUT</Link>
+            </div>
         </div>
         <div class="bottom">
             <div class="section-padding first-half dark">
                 <img src="/imgs/eyeclosed.png" alt="logo">
 
-                <div class="inner-data secondary">
+                <div class="inner-data secondary" transition:slide >
                     <h1>DUPT</h1>
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">Decentralized Unsupervised Pre-Training </h3>
                     <a href="/about"><button>DUPT DOCUMENTATION</button></a>
@@ -43,7 +49,7 @@ import { onMount } from "svelte";
 
             </div>
             <div class="section-padding second-half lightgray">
-                <div class="inner-data secondary">
+                <div class="inner-data secondary" transition:slide >
                     <h1>DSFT</h1>
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">Decentralized Supervised Fine-Tuning </h3>
                     <a href="/about"><button>DSFT DOCUMENTATION</button></a>
@@ -61,6 +67,7 @@ import { onMount } from "svelte";
 <style>
 
 .wrapper{
+    overflow:hidden;
     display:flex;
     flex-flow:column;
     height:100vh;
@@ -73,7 +80,8 @@ import { onMount } from "svelte";
     overflow:hidden;
 }
 .full-width > .inner-data{
-    display:flex;flex-flow:column;justify-content:center;
+    display:flex;flex-flow:column;justify-content:flex-start;    
+    max-width:calc(50vw - 60px);
 
 }
 .bottom{
@@ -94,19 +102,26 @@ import { onMount } from "svelte";
 	background:white;
     color:black;
     width:25rem;
-    left:calc(50vw - 17.5rem);
+    left:calc(50vw - 17.25rem);
     top:50vh;
     height:7rem;
     display:flex;flex-flow:wrap;justify-content:center;
     transform:rotate(45deg);
-    position:absolute;    
+    position:absolute;    z-index:5;
 
 }
 .info-center > h1{
     margin:auto;
     text-transform:uppercase;
 }
+.info-center > .about{
+    position:absolute;transform:rotate(-90deg);top:calc(2.4rem - 1px);left:-4.5rem;
+    border:3px solid white;width:calc(7rem - 6px);height:2rem;
 
+}
+.secondary{
+    z-index:1;
+}
 .arrow{
     display:block;
     min-width:calc(60vw - 120px);
