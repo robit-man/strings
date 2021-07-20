@@ -19,7 +19,7 @@ import { Router, Link, Route } from "svelte-routing";
                     <div class="description">
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">DGPT-1 is architected to be the largest non-sparse autoregressive language built through decentralized deep learning models</h3>
                     <Link style="color:white!important;font-weight:700;top: 3px;
-                        left: 26px;z-index:5;" to="about"><button>ABOUT DGPS-1</button></Link></div>
+                        left: 26px;z-index:5;" to="about"><button>ABOUT DGPT-1</button></Link></div>
                 </div>
             
 
