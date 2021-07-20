@@ -64,18 +64,17 @@ import { Router, Link, Route } from "svelte-routing";
     flex-flow:column;
 }
 .top{
-    min-height:calc(100vh - 120px);
+    min-height:calc(100vh - 60px);
     display:flex;
     flex-flow:row;
     overflow:hidden;
 }
 .full-width > .inner-data{
     display:flex;flex-flow:column;justify-content:center;    
-    max-width:calc(50vw - 60px);
-
+    max-width:720px;
 }
 .bottom{    
-    min-height:calc(50vh - 120px);
+    min-height:calc(50vh - 60px);
     display:flex;flex-flow:row;
     background:#000000;
 }
@@ -102,30 +101,30 @@ import { Router, Link, Route } from "svelte-routing";
     text-transform:uppercase;
 }
 .first-half{
-    display:flex;flex-flow:wrap-reverse;justify-content:center;
+    display:flex;flex-flow:wrap;justify-content:center;
     width:100%;
 
 
     /*clip-path: polygon(calc( 100% - 7rem) 1rem, 100% 6rem, 100% 100%, 0 100%, 0 0);*/
 }
 .first-half > .inner-data{
-    margin:auto;max-width:720px;
+    margin:auto;max-width:800px;
     border-left: 3px solid #ffffff;
-    padding-left:60px;
+    padding-left:30px;margin-left:30px;
 
 }
 .second-half > .inner-data{
     margin:auto;max-width:720px;
     text-align:right!important;    
     border-right: 3px solid #000000;
-    padding-right:60px;
+    padding-right:30px;margin-right:30px;
 
 }
-.second-half > img{filter:invert(0);width:15vh;height:15vh;margin:auto;}
-.first-half > img{width:15vh;height:15vh;margin:auto;filter:invert(1);}
+.second-half > img{filter:invert(0);width:15vh;height:15vh;margin:auto;margin-left:30px;}
+.first-half > img{width:15vh;height:15vh;margin:auto;filter:invert(1);margin-right:30px;}
 
 .second-half{
-    display:flex;flex-flow:wrap;
+    display:flex;flex-flow:wrap-reverse;
     width:100%;
     justify-content:center;
     border-left: 1px solid #ffffff;
@@ -133,27 +132,28 @@ import { Router, Link, Route } from "svelte-routing";
     clip-path: polygon(5rem 0rem, 100% 0, 100% 100%, 0 100%, 0 5rem);
 }
 .full-width{
-    width:calc(100vw - 120px);
+    width:calc(100vw - 60px);
     overflow:hidden;
     display:flex;flex-flow:row;
 }
 .section-padding{
-    padding:60px;
+    padding:30px;
 }
 .inner-data{
     text-align:left;    
 }
 .inner-data h1{
     text-transform:uppercase;
-    font-size:60px;
+    font-size:100px;
+    line-height:80px;
     margin-bottom: 2rem;
 
 }
 .secondary h1{
     text-transform:uppercase;
     margin:unset;
-    font-size:120px;
-    line-height: 120px;
+    font-size:60px;
+    line-height: 60px;
     margin-bottom: 2rem;
     margin-left: -8px;
 }
@@ -233,6 +233,13 @@ import { Router, Link, Route } from "svelte-routing";
 
 @media screen and (max-width: 1600px){
 
+    .inner-data h1{
+    text-transform:uppercase;
+    font-size:60px;
+    line-height:60px;
+    margin-bottom: 2rem;
+
+}
     .bottom{
     display:flex;flex-flow:wrap;
     background:#000000;

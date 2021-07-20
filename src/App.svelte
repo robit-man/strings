@@ -19,7 +19,7 @@
     </Router>
 
     <script type="text/javascript" src="/script.js"></script>
-</div>>
+</div>
 <style>
 	.main {
 		text-align: center;
