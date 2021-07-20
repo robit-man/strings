@@ -21,11 +21,27 @@
 <h3>XI Protocol (meta)oracles and oracle arbiters. </h3>
 <p>DGPT-1 will be trained on trillions of words and will be capable of coding in CSS, JSX, Python, and other programming languages, and is designed to eliminate toxic language, which can perform zero-shot, few-shot and one-shot learning.</p>
 <Link style="font-weight:700;" to="/"><div class="button">HOME</div></Link>
+<div class="team">
+    <h3>Geometric Energy Corporation
+    </h3>
+        <p>Back-End/Architecture </p>
+        
+        <h3>Defy Development Corp
+        </h3>        
+        <p>Middleware</p>
+        <h3>POINTBLANK LLC</h3>
+        
+        <p>Front-End UI/UX</p>
+        <h3>Data Syndicate LLC</h3>
+        
+        <p>Data Wizardry</p>
+</div>
 </div>
         </div>
     </main>
     
     <style>
+        h3, h1{color:#ff0060}
         .main-wrapper{
             height:100vh;width:100vw;position:fixed;
             display: flex;
