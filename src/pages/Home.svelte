@@ -273,6 +273,7 @@ import { Router, Link, Route } from "svelte-routing";
     padding-left:unset;
     text-align:center;
     font-size:20px;
+    padding:0px 30px;
     text-shadow: 1px 1px white;
 }
 .full-width > .inner-data{
