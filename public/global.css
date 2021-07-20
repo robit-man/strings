@@ -8,13 +8,12 @@ html, body {
 
 body {
 	background-image:url(https://xiprotocol.io/img/noise.1384f2df.gif);
-	color: #333;
+	color: black;
 	margin: 0;
 	padding: 0px;
 	box-sizing: border-box;
     font-family: 'Titillium Web', sans-serif;
 }
-
 a {
 	color: rgb(0,100,200);
 	text-decoration: none;
