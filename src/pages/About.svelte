@@ -35,7 +35,7 @@
             background:black;
         }
         .text-wrapper{
-            padding:60px;
+            padding:30px;
             color:white;
             text-align:left;max-width:512px;
         }
