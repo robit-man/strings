@@ -141,7 +141,7 @@ import { Router, Link, Route } from "svelte-routing";
     animation: morph 100s linear infinite;
 }
 .first-half{
-    display:flex;flex-flow:wrap;justify-content:center;
+    display:flex;flex-flow:row;justify-content:center;
     width:calc(50vw - 120px);border-top-right-radius:2rem;
 
     /*clip-path: polygon(calc( 100% - 7rem) 1rem, 100% 6rem, 100% 100%, 0 100%, 0 0);*/
@@ -269,6 +269,26 @@ import { Router, Link, Route } from "svelte-routing";
 }
 @media screen and (max-width: 1600px) {
     
+.info-center{
+    top: 41vh;
+    background: white;
+    color: black;
+    width: 20rem;
+    left: calc(50vw - 14rem);
+    height: 7rem;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 5;
+
+}
+.info-center > h1{
+    margin:auto;
+    font-size:26px;
+    text-transform:uppercase;
+}
 .full-width > .inner-data{
     min-width:calc(100vw - 120px);
     display:flex;flex-flow:row;justify-content:space-between;
@@ -276,6 +296,14 @@ import { Router, Link, Route } from "svelte-routing";
 }
 .first-half{flex-flow:column-reverse;}
 .second-half{flex-flow:column;}
+.secondary h1{
+    text-transform:uppercase;
+    margin:unset;
+    font-size:100px;
+    line-height: 100px;
+    margin-bottom: 2rem;
+    margin-left: -4px;
+}
 .first-half > .inner-data{
     margin:auto;max-width:720px;
     border-left: 0px solid #ffffff;
@@ -299,9 +327,9 @@ import { Router, Link, Route } from "svelte-routing";
     text-align:right;
     width:40vw;
     margin-top: 1rem;
-    border-left: 3px solid white;
+    border-left: 9px solid white;
 }
-.top .inner-data > h1{margin-top: unset; padding-right:60px;max-width:60vw;}
+.top .inner-data > h1{margin-top: unset; font-size:40px;max-width:50vw;}
 .top{
     display:flex;
     flex-flow:row;
@@ -336,8 +364,6 @@ import { Router, Link, Route } from "svelte-routing";
     display:flex;flex-flow:row;
     background:#000000;
 }
-.info-center{top:40vh;}
 }
-
 
 </style>
