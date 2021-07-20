@@ -15,7 +15,7 @@ import { Router, Link, Route } from "svelte-routing";
                 <div transition:slide  class="inner-data" style="
                 position: relative;
                 z-index: 1;">
-                    <h1 >Decentralized Generative Pre-Trained Transformers</h1>
+                    <h1>Decentralized Generative Pre-Trained Transformers</h1>
                     <div class="description">
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">DGPT-1 is architected to be the largest non-sparse autoregressive language built through decentralized deep learning models</h3>
                     <Link style="color:white!important;font-weight:700;top: 3px;
@@ -26,7 +26,7 @@ import { Router, Link, Route } from "svelte-routing";
             </div>
         </div>
         <div class="info-center">
-            <h1>No Rights Reserved</h1>
+            <h1><b >No</b> Rights Reserved</h1><h3>Open Sourced by GeometricLabs Corporation <br><a style="color:white;text-shadow:1px 1px black;" href="https://opensource.org/">Learn More About The Benefits of OpenSource</a></h3>
            
         </div>
         <div class="bottom">
@@ -62,16 +62,20 @@ import { Router, Link, Route } from "svelte-routing";
     overflow:hidden;
     display:flex;
     flex-flow:column;
+    background:black;
+
 }
 .top{
-    min-height:calc(100vh - 60px);
+    min-height:calc(60vh - 60px);
     display:flex;
     flex-flow:row;
     overflow:hidden;
+    background:#ff0060;
+
 }
 .full-width > .inner-data{
     display:flex;flex-flow:column;justify-content:center;    
-    max-width:720px;
+    margin:20vw;
 }
 .bottom{    
     min-height:calc(50vh - 60px);
@@ -86,26 +90,44 @@ import { Router, Link, Route } from "svelte-routing";
 
     }
 }
-
+.full-width{
+    clip-path: polygon(100% 0, 100% calc(100% - 4rem), calc(100% - 4rem) 100%, 0 100%, 0 0);
+}
 .info-center{
 	background:white;
     color:black;
-    height:7rem;
+    height:10rem;
     display:flex;flex-flow:wrap;justify-content:center;
-    right:0px;
+    right:0px;    
+    background:#ff0060;
     z-index:5;
+    clip-path: polygon(100% 0, 100% 100%, 4rem 100%, 0 calc(100% - 4rem), 0 0);
 
 }
 .info-center > h1{
-    margin:auto;
     text-transform:uppercase;
+    font-size:5rem;
+    margin:unset;
+    line-height:10rem;
+    text-shadow: 2px 2px white;
+}
+.info-center > h3{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-transform:uppercase;
+    margin-left:30px;border-left:3px solid black;
+    padding-left:30px;
+    text-align:left;
+    font-size:20px;
+    text-shadow: 1px 1px white;
 }
 .first-half{
     display:flex;flex-flow:wrap;justify-content:center;
     width:100%;
 
 
-    /*clip-path: polygon(calc( 100% - 7rem) 1rem, 100% 6rem, 100% 100%, 0 100%, 0 0);*/
+    clip-path: polygon(calc( 100% - 4rem) 0rem, 100% 4rem, 100% 100%, 0 100%, 0 0);
 }
 .first-half > .inner-data{
     margin:auto;max-width:800px;
@@ -129,7 +151,7 @@ import { Router, Link, Route } from "svelte-routing";
     justify-content:center;
     border-left: 1px solid #ffffff;
     border-top-left-radius:2rem;
-    clip-path: polygon(5rem 0rem, 100% 0, 100% 100%, 0 100%, 0 5rem);
+    clip-path: polygon(4rem 0rem, 100% 0, 100% 100%, 0 100%, 0 4rem);
 }
 .full-width{
     width:calc(100vw - 60px);
@@ -166,6 +188,7 @@ import { Router, Link, Route } from "svelte-routing";
     background:#000000;
     color:#ffffff;
 }
+.light > .inner-data > h1{color:#ff0060;}
 .dark{
     background:#000000;
     color:#ffffff;
@@ -175,27 +198,27 @@ import { Router, Link, Route } from "svelte-routing";
     color:#000000;
 }
 .light button {
-	border:1px solid #ffffff;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
-	color: #000000;
-	background-color: #ffffff;
+	border:1px solid #ff0060;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
+	color: #fff;
+	background-color: #ff0060;
 	outline: none;
 	letter-spacing:2px;
 	transition:background-color 200ms, color 200ms ease;
 }
 .light button:hover {
 	border:1px solid #ffffff;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
 	color: #ffffff;
 	background-color: #000000;
 	outline: none;
 }
 .lightgray button {
 	border:1px solid #000000;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
 	color: #ffffff;
 	background-color: #000000;
 	outline: none;
@@ -204,8 +227,8 @@ import { Router, Link, Route } from "svelte-routing";
 }
 .lightgray button:hover {
 	border:1px solid #000000;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
 	color: #000000;
 	background-color: #ffffff;
 	outline: none;
@@ -214,8 +237,8 @@ import { Router, Link, Route } from "svelte-routing";
 
 .dark button {
 	border:1px solid #ffffff;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
 	color: #000000;
 	background-color: #ffffff;
 	outline: none;
@@ -224,8 +247,8 @@ import { Router, Link, Route } from "svelte-routing";
 }
 .dark  button:hover {
 	border:1px solid #ffffff;
-	border-radius:0.25rem ;
-	padding:0.5rem 1rem;
+	border-radius:0.24rem ;
+	padding:0.4rem 1rem;
 	color: #ffffff;
 	background-color: #000000;
 	outline: none;
@@ -239,6 +262,32 @@ import { Router, Link, Route } from "svelte-routing";
     line-height:50px;
     margin-bottom: 2rem;
 
+}
+.info-center > h3{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-transform:uppercase;
+    margin-left:unset;
+    border-left:unset;
+    padding-left:unset;
+    text-align:center;
+    font-size:20px;
+    text-shadow: 1px 1px white;
+}
+.full-width > .inner-data{
+    display:flex;flex-flow:column;justify-content:center;    
+    margin:auto;
+}
+.info-center{
+    height:auto;
+}
+.info-center > h1{
+    text-transform:uppercase;
+    font-size:2.5rem;
+    margin:unset;
+    line-height:5rem;
+    text-shadow: 2px 2px white;
 }
     .bottom{
     display:flex;flex-flow:wrap;
