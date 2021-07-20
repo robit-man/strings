@@ -17,14 +17,13 @@
         <Route path="/*"><Four /></Route>
 
     </Router>
-	
+
     <script type="text/javascript" src="/script.js"></script>
 </div>>
 <style>
 	.main {
 		text-align: center;
 		padding: 0rem;
-		width:100vw;
 		margin: 0 auto;
 	}
 
