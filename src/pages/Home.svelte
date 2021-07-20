@@ -235,8 +235,8 @@ import { Router, Link, Route } from "svelte-routing";
 
     .inner-data h1{
     text-transform:uppercase;
-    font-size:60px;
-    line-height:60px;
+    font-size:50px;
+    line-height:50px;
     margin-bottom: 2rem;
 
 }
