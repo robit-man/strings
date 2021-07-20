@@ -146,7 +146,7 @@ import { Router, Link, Route } from "svelte-routing";
 
     /*clip-path: polygon(calc( 100% - 7rem) 1rem, 100% 6rem, 100% 100%, 0 100%, 0 0);*/
 }
-.first-half > img{width:15vw;height:15vw;margin:auto;filter:invert(1);}
+.first-half > img{max-width:420px;max-height:420px;min-width:64px;min-height:64px;width:15vw;height:15vw;margin:auto;filter:invert(1);}
 .first-half > .inner-data{
     margin:auto;max-width:720px;
     border-left: 3px solid #ffffff;
