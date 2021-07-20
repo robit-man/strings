@@ -273,6 +273,7 @@ import { Router, Link, Route } from "svelte-routing";
 .section-padding{
     padding:60px;
     padding-top:0px;
+    padding-bottom:0px;
 }
 .secondary > h1{
     font-size:64px;
@@ -325,7 +326,7 @@ import { Router, Link, Route } from "svelte-routing";
     border-left: 0px solid #ffffff;
     padding-left:0px;    
     border-bottom: 3px solid #ffffff;
-    padding-bottom:60px;
+    padding-bottom:30px;
 
 
 }
@@ -334,7 +335,7 @@ import { Router, Link, Route } from "svelte-routing";
     border-right: 0px solid #000000;
     padding-right:0px;
     border-bottom: 3px solid #000000;
-    padding-bottom:60px;
+    padding-bottom:30px;
 
 }
 .inner-data > .description{
