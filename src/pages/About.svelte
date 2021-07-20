@@ -1,12 +1,13 @@
 <script>
     import { onMount } from "svelte";
+    import { slide } from 'svelte/transition';
     import { Router, Link, Route } from "svelte-routing"; 
     
     </script>
     
     <main>
         <div class="main-wrapper">
-            <div class="text-wrapper">
+            <div class="text-wrapper" transition:slide >
                 <h1>DGPT-1</h1>
                 <p>GeometricLabs Corporation, a Calgary-based decentralized computing company announced on July 17, 2021 that it is developing decentralized generative pre-trained transformers for which no company will have an exclusive license and so that everyone has access to the underlying code for the benefit of all. DGPT-1 is an autoregressive language model that uses deep learning to produce human-like text. It is the first-generation language prediction model in the DGPT-n series, which intends to be the first NLP with trillion(s) of machine learning parameters, enabled through outsourced distributed computing.</p>
                 <p>
