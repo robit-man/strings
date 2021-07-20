@@ -102,12 +102,13 @@ import { Router, Link, Route } from "svelte-routing";
 	background:white;
     color:black;
     width:25rem;
-    left:calc(50vw - 17.25rem);
-    top:50vh;
+    left: calc(50vw - 16rem);
+    top: calc(60vh - 7rem);    
     height:7rem;
     display:flex;flex-flow:wrap;justify-content:center;
     transform:rotate(45deg);
-    position:absolute;    z-index:5;
+    position:absolute;    
+    z-index:5;
 
 }
 .info-center > h1{
@@ -146,7 +147,6 @@ import { Router, Link, Route } from "svelte-routing";
 
     /*clip-path: polygon(calc( 100% - 7rem) 1rem, 100% 6rem, 100% 100%, 0 100%, 0 0);*/
 }
-.first-half > img{max-width:420px;max-height:420px;min-width:64px;min-height:64px;width:15vw;height:15vw;margin:auto;filter:invert(1);}
 .first-half > .inner-data{
     margin:auto;max-width:720px;
     border-left: 3px solid #ffffff;
@@ -160,7 +160,8 @@ import { Router, Link, Route } from "svelte-routing";
     padding-right:60px;
 
 }
-.second-half > img{filter:invert(0);width:15vw;height:15vw;margin:auto;}
+.second-half > img{filter:invert(0);width:15vh;height:15vh;margin:auto;}
+.first-half > img{width:15vh;height:15vh;margin:auto;filter:invert(1);}
 
 .second-half{
     display:flex;flex-flow:wrap;justify-content:center;
@@ -267,14 +268,29 @@ import { Router, Link, Route } from "svelte-routing";
 	background-color: #000000;
 	outline: none;
 }
+@media screen and (max-height: 1000px) {
+    
+.section-padding{
+    padding:60px;
+    padding-top:0px;
+}
+.secondary > h1{
+    font-size:64px;
+    line-height:64px;
+}
+.second-half > img{display:none;}
+.first-half > img{display:none;}
+.arrow{display:none;}
+
+}
 @media screen and (max-width: 1600px) {
     
 .info-center{
-    top: 41vh;
+    top:calc(50vh - 7rem);
     background: white;
     color: black;
     width: 20rem;
-    left: calc(50vw - 14rem);
+    left: calc(50vw - 13.5rem);
     height: 7rem;
     display: flex;
     flex-flow: wrap;
@@ -317,7 +333,6 @@ import { Router, Link, Route } from "svelte-routing";
     margin:auto;max-width:720px;
     border-right: 0px solid #000000;
     padding-right:0px;
-
     border-bottom: 3px solid #000000;
     padding-bottom:60px;
 
