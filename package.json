@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "svelte-routing": "^1.6.0"
+    "svelte-routing": "^1.6.0",
+    "svelte-speedometer": "^1.1.0"
   }
 }

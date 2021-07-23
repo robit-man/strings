@@ -1,6 +1,7 @@
 <script>
     import { Router, Route, Link } from "svelte-routing";
     import Home from "./pages/Home.svelte";
+    import Jeff from "./pages/jeff.svelte";
     import About from "./pages/About.svelte";
     import Four from "./pages/Four.svelte";
     export let url = "";
@@ -13,6 +14,7 @@
     <Router url="{url}">
 
         <Route path="/"><Home /></Route>
+        <Route path="jeff"><Jeff /></Route>
         <Route path="about" ><About /></Route>
         <Route path="/*"><Four /></Route>
 
