@@ -1,6 +1,6 @@
 <script>
 import { onMount } from "svelte";
-import { slide } from 'svelte/transition';
+import { slide, fade } from 'svelte/transition';
 import { Router, Link, Route } from "svelte-routing";
 
 
@@ -15,9 +15,9 @@ import { Router, Link, Route } from "svelte-routing";
                 <div transition:slide  class="inner-data" style="
                 position: relative;
                 z-index: 1;">
-                    <h1>Decentralized Generative Pre-Trained Transformers</h1>
+                    <h1 transition:fade >Beep Boop</h1>
                     <div class="description">
-                    <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">DGPT-1 is architected to be the largest non-sparse autoregressive language built through decentralized deep learning models</h3>
+                    <h3 style="">nu-soccer testing grounds</h3>
                     <Link style="color:white!important;font-weight:700;top: 3px;
                         left: 26px;z-index:5;" to="about"><button>ABOUT DGPT-1</button></Link></div>
                 </div>
@@ -34,18 +34,18 @@ import { Router, Link, Route } from "svelte-routing";
                 <img src="/imgs/eyeclosed.png" alt="logo">
 
                 <div class="inner-data secondary" transition:slide >
-                    <h1>DUPT</h1>
+                    <h1>JEFF</h1>
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">Decentralized Unsupervised Pre-Training </h3>
-                    <a href="/about"><button>DUPT DOCUMENTATION</button></a>
+                    <Link style="color:white!important;font-weight:700;top: 3px;
+                    left: 26px;z-index:5;" to="jeff"><button>Link To Jeff</button></Link>
                 </div>
 
             </div>
             <div class="section-padding second-half lightgray">
                 <div class="inner-data secondary" transition:slide >
-                    <h1>DSFT</h1>
+                    <h1>FOUR</h1>
                     <h3 style="font-weight:200;letter-spacing:1px;margin-bottom:2rem;">Decentralized Supervised Fine-Tuning </h3>
-                    <a href="/about"><button>DSFT DOCUMENTATION</button></a>
-                </div>
+                    <Link style="" to="four"><button>Link To Four</button></Link>                </div>
                 <img src="/imgs/eyeopen.png" alt="logo">
 
 
