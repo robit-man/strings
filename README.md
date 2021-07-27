@@ -1,5 +1,5 @@
 
-# DGPT - 1
+# NU-SOCCR PROVING GROUND
 
 ```bash
 npx degit sveltejs/template svelte-app
