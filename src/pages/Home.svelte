@@ -94,7 +94,9 @@ article > p{
 .row{display:flex;flex-flow:row;}
 .column{display:flex;flex-flow:column;}
 .button-row{
-    display: flex;flex-flow:flex-start;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 80vw;
 }
 .footer-arrow{
     filter: invert(1);
