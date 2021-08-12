@@ -109,8 +109,23 @@ article > p{
 }
 .button-row > a {margin-right:0.5rem;
 margin-bottom:0.5rem;}
-@media screen and (max-width: 1600px){
-
+@media screen and (max-width: 1000px){
+    header{
+    background: white;
+    width: 100%;
+    padding: 1rem;
+    max-height: 30vh;
+    height: 256px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    clip-path: unset;
+    pointer-events: none;
+    border-bottom-right-radius: 128px;
+    border-top-right-radius: unset;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    }
 }
 
 </style>
