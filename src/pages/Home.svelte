@@ -142,8 +142,7 @@ header > h1{
     background: white;
     width: calc(100vw - 3rem);
     padding: 1rem;
-    max-height: 30vh;
-    height: 256px;
+    min-height: 256px;
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
