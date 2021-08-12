@@ -44,7 +44,7 @@ input:disabled {
 }
 
 button {
-	border:0.5px solid rgb(170, 170, 170);
+	border:1x solid rgb(170, 170, 170);
 	border-radius:0.25rem ;
 	padding:0.5rem 1rem;
 	margin:unset;
@@ -52,6 +52,7 @@ button {
 	background-color: black;
 	display: block;
 	letter-spacing:2px;
+	font-weight:normal;
 	transition:background-color 200ms, color 200ms ease;
 }
 button:hover {

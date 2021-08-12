@@ -22,6 +22,7 @@ import { Router, Link, Route } from "svelte-routing";
           <a href="https://dgpt.one/"><button>DGPT-1</button></a>
           <a href="https://noclip.org/"><button>NOCLIP</button></a>
           <a href="https://revest.finance/"><button>REVEST</button></a>
+          <a href="https://pointblank.company/robot/"><button><img src="/imgs/robot.png" alt=""></button></a>
         </div>
     </article>
     <footer transition:slide >
@@ -64,10 +65,13 @@ header > h1{
     margin-right:auto;
     margin-left:0.5rem;
     margin-bottom: unset;
+    font-size:6rem;
+    line-height: 0.8;   
 }
 header > img{
     position: absolute;
     height:inherit;
+    animation: spin 100s linear infinite;
 
 }
 footer{
@@ -107,12 +111,36 @@ article > p{
     margin-top: -20px;
     margin-bottom: -20px;
 }
+button img{
+    filter: invert(1);
+height: 34px;
+margin-bottom: -14px;
+margin-top: -8px;
+transition:filter 200ms ease;
+}
+button:hover img{
+    filter:invert(0);
+}
 .button-row > a {margin-right:0.5rem;
 margin-bottom:0.5rem;}
+@keyframes spin {
+    0%{transform:rotate(0deg);
+    }
+    100%{transform:rotate(360deg);
+    }
+}
 @media screen and (max-width: 1000px){
+header > h1{
+    margin-left:0rem;
+    line-height: 1;   
+    font-size:2rem;
+    line-height:0.7;
+
+
+}
     header{
     background: white;
-    width: 100%;
+    width: calc(100vw - 3rem);
     padding: 1rem;
     max-height: 30vh;
     height: 256px;
@@ -121,7 +149,7 @@ margin-bottom:0.5rem;}
     justify-content: flex-end;
     clip-path: unset;
     pointer-events: none;
-    border-bottom-right-radius: 128px;
+    border-bottom-right-radius: calc(128px + 1rem);
     border-top-right-radius: unset;
     margin-left: -1rem;
     margin-top: -1rem;
