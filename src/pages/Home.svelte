@@ -13,7 +13,7 @@ import { Router, Link, Route } from "svelte-routing";
       </header>
       <article>
           <p>
-              <b transition:fade  >POINTBLANK LLC</b> is a Rapid Prototyping, Consulting, and App Development public benefit company out of Portland Oregon.
+              <b transition:fade  >POINTBLANK LLC</b> is a Rapid Prototyping, Consulting, and App Development public benefit corporation out of Portland Oregon.
           </p>
           
           <p transition:fade >The latest projects we are aiding</p>
@@ -40,7 +40,9 @@ import { Router, Link, Route } from "svelte-routing";
 <style>
 .wrapper{max-width:1024px;
     padding:1rem;
-    margin: auto;}
+    margin: auto;
+    overflow-x: hidden;
+}
 header{
     margin-top:6rem;
     background:white;
