@@ -21,7 +21,7 @@
         </div>
         <div class="desc">
             <h1>{nfttitle}</h1>
-            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:white;"></div>
+            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:#689746;"></div>
             <p>{desc}</p>
             <p>OWNED BY: <a style="display:inline;" href="{ownerlink}"><b>{owner}</b></a></p>
             <p>PROTOCOL: <b>{protocol}</b></p>
@@ -33,7 +33,7 @@
 <style>
     .card{
         text-align: left;
-        background: linear-gradient(45deg, #004a43, #420533);
+        background: linear-gradient(45deg, #004a43, rgba(104, 151, 70, 0.521));
         width: 410px;
         min-height: 480px;
         box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
