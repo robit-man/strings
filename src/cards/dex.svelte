@@ -33,7 +33,7 @@
 <style>
     .card{
         text-align: left;
-        background: linear-gradient(45deg, #232323, #282828);
+        background: linear-gradient(45deg, #004a43, #420533);
         width: 410px;
         min-height: 480px;
         box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);

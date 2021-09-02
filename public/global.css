@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 html {
 	scroll-behavior: smooth;
@@ -17,6 +17,7 @@ p{
 }
 h1, h2, h3, h4, h5, h6{
 	    font-family: 'Space Mono', monospace;
+		font-weight: 700;
 }
 a {
 	color: inherit;
