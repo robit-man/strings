@@ -2,157 +2,111 @@
 import { onMount } from "svelte";
 import { slide, fade } from 'svelte/transition';
 import { Router, Link, Route } from "svelte-routing";
+import Card from "../cards/dex.svelte"
 
 </script>
 
 <main>
   <div class="wrapper">
       <header>
-          <h1 transition:fade datadelay:200 >POINTBLANK</h1>
-          <img transition:slide src="/imgs/pointblank.svg" alt="">
+        <div class="nav-row">
+          <div class="icon-box">
+            <img src="" alt="">
+          </div>
+          <div class="nav-links">
+            <a href=""><h5>Twitter</h5></a>
+            <a href=""><h5>Discord</h5></a>
+          </div>
+        </div>
       </header>
       <article>
-          <p>
-              <b transition:fade  >POINTBLANK LLC</b> is a Rapid Prototyping, Consulting, and App Development public benefit corporation out of Portland Oregon.
-          </p>
-          
-          <p transition:fade >The latest projects we are aiding</p>
-          <div class="button-row">
-          <a href="https://www.prnewswire.com/news-releases/spacex-to-launch-doge-1-to-the-moon-301287016.html"><button>DOGE-1</button></a>
-          <a href="https://dgpt.one/"><button>DGPT-1</button></a>
-          <a href="https://noclip.org/"><button>NOCLIP</button></a>
-          <a href="https://revest.finance/"><button>REVEST</button></a>
-          <a href="https://pointblank.company/robot/"><button><img src="/imgs/robot.png" alt=""></button></a>
-        </div>
+      <Card />
     </article>
     <footer transition:slide >
-        <div class="row">
-        <div class="column">
-            <p style="font-size:10px;max-width:128px;">Inquiries will be selected and responses given at our discretion.</p>
-            <a href="https://pointblank.company/contact"><button>CONTACT</button></a>
-        </div>
-        <img class="footer-arrow" src="/imgs/fast-forward.svg" alt="">
-        </div>
-
+     
     </footer>
   </div>
+  <div class="stars"></div>
+
 </main>
 
-<style>
-.wrapper{max-width:1024px;
-    padding:1rem;
-    margin: auto;
-    overflow-x: hidden;
+<style type="text/scss">
+
+$stars: 350;         // Number of start per layer
+$depth: 300;         // Depth between star layers
+$speed: 3s;          // Number of seconds to transition between layers
+$width: 3000;        // Width of the starfield
+$height: 960;        // Height of the starfield
+
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
-header{
-    margin-top:6rem;
-    background:white;
-    width:calc(100% - 2rem);
-    padding:1rem;
-    max-height:30vh;
-    height:256px;
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-    clip-path: polygon(1rem 0, 100% 0, 100% 100%, 0 100%, 0 1rem);
-    pointer-events: none;
-    border-bottom-right-radius: 700px;
-    border-top-right-radius: 700px;
+body {
+  background: #000;
+  perspective: 340px;
 }
-header > h1{
-    text-align:left;
-    margin-top:auto;
-    margin-right:auto;
-    margin-left:0.5rem;
-    margin-bottom: unset;
-    font-size:6rem;
-    line-height: 0.8;   
+.nav-row{
+  display:flex;flex-flow:row;
+  justify-content: space-between;
+  margin:auto;padding:1rem 2rem;
 }
-header > img{
+.nav-links{display:flex;flex-flow:row;justify-content:space-around;}
+.nav-links > a{margin:1rem;}
+.stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  $box-shadow: ();
+  @for $i from 0 through $stars {
+    $box-shadow: $box-shadow, (random($width)-$width/2 + px) (random($height)-$height/2 + px) hsl(90,0,75+random(25));
+  }
+  box-shadow: $box-shadow;
+  animation: fly $speed linear infinite;
+  transform-style: preserve-3d;
+  
+  &:before, &:after {
+    content: "";
     position: absolute;
-    height:inherit;
-    animation: spin 100s linear infinite;
-
-}
-footer{
-    margin-top: 2rem;
-    padding: 2rem;
-    border: 10px solid;
-    border-image-slice: 1;
-    border-width: 5px;    
-    width: max-content; 
-    border-image-source: linear-gradient(to left, black, black, white);
-}
-footer > .row p{
-    color:white;
-    text-align:left;
-    margin-top:-4px;
-}
-article{
-    padding:0.5rem 0rem;
-    margin-top:2rem;
-    max-width:512px;
-}
-article > p{
-    text-align: left;
-    color:white;
-}
-.row{display:flex;flex-flow:row;}
-.column{display:flex;flex-flow:column;}
-.button-row{
-    display: flex;
-    flex-flow: wrap;
-    max-width: 80vw;
-}
-.footer-arrow{
-    filter: invert(1);
-    margin-left: 2rem;
-    height: 145px;
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
-button img{
-    filter: invert(1);
-height: 34px;
-margin-bottom: -14px;
-margin-top: -8px;
-transition:filter 200ms ease;
-}
-button:hover img{
-    filter:invert(0);
-}
-.button-row > a {margin-right:0.5rem;
-margin-bottom:0.5rem;}
-@keyframes spin {
-    0%{transform:rotate(0deg);
-    }
-    100%{transform:rotate(360deg);
-    }
-}
-@media screen and (max-width: 1000px){
-header > h1{
-    margin-left:0rem;
-    line-height: 1;   
-    font-size:2rem;
-    line-height:0.7;
-
-
-}
-    header{
-    background: white;
-    width: calc(100vw - 3rem);
-    padding: 1rem;
-    min-height: 256px;
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-end;
-    clip-path: unset;
-    pointer-events: none;
-    border-bottom-right-radius: calc(128px + 1rem);
-    border-top-right-radius: unset;
-    margin-left: -1rem;
-    margin-top: -1rem;
-    }
+    width: inherit;
+    height: inherit;
+    box-shadow: inherit;
+  }
+  &:before {
+    transform: translateZ(-$depth + px);
+    animation: fade1 $speed linear infinite;
+  }
+  &:after {
+    transform: translateZ(-$depth * 2 + px);
+    animation: fade2 $speed linear infinite;
+  }
 }
 
+@keyframes fly {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ($depth + px);
+  }
+}
+
+@keyframes fade1 {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }  
+}
+@keyframes fade2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+  }  
+}
 </style>
