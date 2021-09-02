@@ -3,7 +3,9 @@ import { onMount } from "svelte";
 import { slide, fade } from 'svelte/transition';
 import { Router, Link, Route } from "svelte-routing";
 import Card from "../cards/dex.svelte"
+import { Swiper, SwiperSlide } from 'swiper/svelte';
 
+import 'swiper/css';
 </script>
 
 <main>
@@ -19,9 +21,31 @@ import Card from "../cards/dex.svelte"
           </div>
         </div>
       </header>
-      <article>
-      <Card />
-    </article>
+        <Swiper style="
+        height: max-content!important;
+        margin: auto!important;"
+        spaceBetween={50}
+        slidesPerView={3}
+        on:slideChange={() => console.log('slide change')}
+        on:swiper={(e) => console.log(e.detail[0])}
+      >
+      <SwiperSlide>      
+        <Card />
+      </SwiperSlide>
+      <SwiperSlide>      
+        <Card />
+      </SwiperSlide>
+      <SwiperSlide>      
+        <Card />
+      </SwiperSlide>
+      <SwiperSlide>      
+        <Card />
+      </SwiperSlide>
+      <SwiperSlide>      
+        <Card />
+      </SwiperSlide>
+        ...
+      </Swiper>
     <footer transition:slide >
      
     </footer>
@@ -47,9 +71,17 @@ body {
   perspective: 340px;
 }
 .nav-row{
-  display:flex;flex-flow:row;
+  position: absolute;
+  height:100px;top:0px;width:calc(100vw - 4rem);
+  display:flex;
+  flex-flow:row;
   justify-content: space-between;
   margin:auto;padding:1rem 2rem;
+}
+.wrapper{    
+  position: relative;
+  height: 100vh;
+    display: flex;
 }
 .nav-links{display:flex;flex-flow:row;justify-content:space-around;}
 .nav-links > a{margin:1rem;}
