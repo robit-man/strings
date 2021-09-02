@@ -30,7 +30,11 @@ import 'swiper/css';
         on:swiper={(e) => console.log(e.detail[0])}
       >
       <SwiperSlide>      
-        <Card />
+        <Card 
+        nfttitle="NFT TITLE"
+        desc="Nft Description Placeholder"
+        owner="Owner ID"
+         />
       </SwiperSlide>
       <SwiperSlide>      
         <Card />

@@ -46,6 +46,9 @@
         position: relative;
         z-index: 4;
     }
+    p > a{
+        color:#689746;
+    }
     .nft-image > img{
         width: 300px;
         height: 300px;
