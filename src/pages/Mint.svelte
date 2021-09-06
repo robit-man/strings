@@ -141,13 +141,18 @@ animation();
 
         display: flex;
     }
+    @keyframes grow{
+        0%{transform:scale(1);}
+        50%{transform:scale(0.9);}
+        100%{transform:scale(1);}
+    }
     .mint-image-wrapper{
-        padding:2rem;
+        padding:2rem 0rem;
     }
     .mint-image-wrapper > img{
-        overflow:hidden;border-radius: 2rem;        
+        overflow:hidden;border-radius: 1rem;        
         box-shadow: 0px 15px 60px -5px rgba(20, 24, 223, 0.32);
-
+        animation:grow 5s linear infinite;
     }
     .mint-box{
         display:flex;flex-flow:column;
@@ -157,7 +162,11 @@ animation();
     button:hover > h2{
         color:black;
     }
-    button{border-radius:0.5rem;border:5px solid white;padding:0rem 2rem;}
+    button:hover{
+        background-color:white;
+
+    }
+    button{cursor:pointer;background-color:transparent;border-radius:0.5rem;border:5px solid white;padding:0rem 2rem;}
     .mint-button-wrapper{
         display:flex;flex-flow:row;justify-content: center;
     }

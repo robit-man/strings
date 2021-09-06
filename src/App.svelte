@@ -35,7 +35,7 @@
 
     <script type="text/javascript" src="/script.js"></script>
     <footer style="position:absolute;bottom:0px;left:0px;width:100vw;height:auto;">
-        <a href="/"><h1 style="width:100vw;text-align:center;font-size:5rem;">SPACEPEPES</h1></a>
+        <a href="/"><h1 class="pepebottom">SPACEPEPES</h1></a>
     </footer>
 </div>
 <style>
@@ -58,7 +58,13 @@
   height: 100vh;
     display: flex;
 }
-
+.pepebottom{
+    width:100vw;text-align:center;font-size:5rem;
+}
+@media screen and (max-width: 1000px) {
+        .pepebottom{width:100vw;text-align:center;font-size:3rem;}
+  
+    }
 .nav-links{display:flex;flex-flow:row;justify-content:space-around;}
 .nav-links > a{margin:1rem;transition:transform 0.2s ease;}
 .icon-box > a{margin:1rem;transition:transform 0.2s ease;}
