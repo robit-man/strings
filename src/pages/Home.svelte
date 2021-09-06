@@ -13,17 +13,7 @@ import 'swiper/css';
 
 <main>
   <div class="wrapper">
-      <header>
-        <div class="nav-row">
-          <div class="icon-box">
-            <img src="" alt="">
-          </div>
-          <div class="nav-links">
-            <a href=""><h5>Twitter</h5></a>
-            <a href=""><h5>Discord</h5></a>
-          </div>
-        </div>
-      </header>
+     
         <Swiper style="
         height: max-content!important;
         margin: auto!important;"
@@ -38,14 +28,7 @@ import 'swiper/css';
         desc="Nft Description Placeholder"
         owner="Owner ID"
          />
-         <img style="mix-blend-mode: screen;
-         filter: brightness(0.5);
-         opacity: 0.5;
-         position: absolute;
-         right: 0px;
-         top: calc(50% - 15rem);
-         transform: rotate(90deg);
-         height: 30rem;" src="/imgs/swipe.gif" alt="">
+         <img class="scrollimg" src="/imgs/swipe.gif" alt="">
       </SwiperSlide>
       <SwiperSlide>      
         <Card />
@@ -472,6 +455,17 @@ body {
   position: relative;
   height: 100vh;
     display: flex;
+}
+.scrollimg{
+  mix-blend-mode: screen;
+         filter: brightness(0.5);
+         opacity: 0.5;
+         position: absolute;
+         border-radius:50%;
+         right: 0px;
+         top: calc(50% - 15rem);
+         transform: rotate(90deg);
+         height: 30rem;
 }
 
 .nav-links{display:flex;flex-flow:row;justify-content:space-around;}
