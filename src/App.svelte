@@ -13,7 +13,6 @@
 	<header>
         <div class="nav-row">
           <div class="icon-box">
-            <a href="/about"><img style="margin:0.5rem;" height="48px" src="/imgs/mint.png" alt=""></a>
           </div>
           <div class="nav-links">
             <a target="_blank" href="https://twitter.com/spacepepes"><img width="64px" style="filter:invert(1);" src="/imgs/twitter.png" alt="">
@@ -24,17 +23,19 @@
         </div>
       </header>
     <Router url="{url}">
+        
+        <Link style="top:0px;left:opx;position:fixed;z-index:6;" to="/mint"><img style="margin:2.5rem;" height="48px" src="/imgs/mint.png" alt=""></Link>
 
         <Route path="/"><Home /></Route>
-        <Route path="mint"><Mint /></Route>
-        <Route path="about" ><About /></Route>
+        <Route path="/mint" component={Mint}><Mint /></Route>
+        <Route path="/about" component={About}><About /></Route>
         <Route path="/*"><Four /></Route>
 
     </Router>
 
     <script type="text/javascript" src="/script.js"></script>
     <footer style="position:absolute;bottom:0px;left:0px;width:100vw;height:auto;">
-        <h1 style="font-size:5rem;">SPACEPEPES</h1>
+        <a href="/"><h1 style="width:100vw;text-align:center;font-size:5rem;">SPACEPEPES</h1></a>
     </footer>
 </div>
 <style>
@@ -45,7 +46,7 @@
 	}
     header{z-index:5;position:absolute;}
     .nav-row{
-  position: absolute;
+  position: fixed;
   height:100px;top:0px;width:calc(100vw - 4rem);
   display:flex;
   flex-flow:row;

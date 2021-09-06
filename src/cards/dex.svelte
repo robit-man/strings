@@ -89,4 +89,12 @@
     justify-content: center;
 max-width:512px;margin:auto;
     }
+    @keyframes glow{
+        0%{filter:brightness(1);}
+        50%{filter:brightness(1.5);}
+        100%{filter:brightness(1);}
+    }
+    .card:hover{
+        animation: glow 0.2s 1;
+    }
 </style>
