@@ -7,13 +7,13 @@
     <div class="wrapper">
         <div class="mint-box">
             <div class="mint-title-box">
-                <h1>MANIFEST A RARE SPACEPEPE</h1>
+                <h1>MINT A SPACEPEPE</h1>
             </div>
             <div class="mint-image-wrapper">
                 <img src="/imgs/mintpepe.png" alt="">
             </div>
             <div class="mint-button-wrapper">
-                <button><h2>APPROVE MINT</h2></button>
+                <button><h2>APPROVE MINT <img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
             </div>
         </div>    
     </div>
@@ -165,6 +165,12 @@ animation();
     button:hover{
         background-color:white;
 
+    }
+    button:hover h2 > img{
+filter:invert(0);
+    }
+    button h2 > img{
+filter:invert(1);
     }
     button{cursor:pointer;background-color:transparent;border-radius:0.5rem;border:5px solid white;padding:0rem 2rem;}
     .mint-button-wrapper{
