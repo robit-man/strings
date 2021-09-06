@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
+@font-face {
+    font-family: "Future";
+    src: url("/fonts/This Is The Future.ttf");
+}
 html {
 	scroll-behavior: smooth;
 }
@@ -16,8 +20,11 @@ p{
 	font-family: 'Space Mono', monospace;
 }
 h1, h2, h3, h4, h5, h6{
-	    font-family: 'Space Mono', monospace;
+	    font-family: 'Future', monospace;
 		font-weight: 700;
+		color:rgb(255, 255, 255);
+		letter-spacing:2px;
+		text-shadow: 0px 2px #bbff0157, 0px 2px 10px rgba(0,0,0,0.2);
 }
 a {
 	color: inherit;

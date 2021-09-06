@@ -1,7 +1,7 @@
 <script>
     import { Router, Route, Link } from "svelte-routing";
     import Home from "./pages/Home.svelte";
-    import Contact from "./pages/Contact.svelte";
+    import Mint from "./pages/Mint.svelte";
     import About from "./pages/About.svelte";
     import Four from "./pages/Four.svelte";
     export let url = "";
@@ -14,7 +14,7 @@
     <Router url="{url}">
 
         <Route path="/"><Home /></Route>
-        <Route path="contact"><Contact /></Route>
+        <Route path="mint"><Mint /></Route>
         <Route path="about" ><About /></Route>
         <Route path="/*"><Four /></Route>
 

@@ -1,4 +1,5 @@
 <script>
+    //Help import data from opensea <3 
     export let nftlink = 'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/42177050677546159779710000316165471247211713436920374376455667151256854462465';
     export let nftimage = 'https://lh3.googleusercontent.com/gzNYAoekV_UlhEn47l7UIaQ5Bs3Rsgz9QL5ITQ8BN53SP5NSlU2CjfHQXGzGhVw1JJ2dy7qUHVqcbyQs21jEF5YnO8_sAqAS_mRH=w600';
     export let nfttitle = 'Space Pepe #1';
@@ -16,12 +17,14 @@
                 <img src="{nftimage}" alt="">
             </div>
             <div class="links">
-                <a href="{nftlink}"><img width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
+                <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
+                <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
+                <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
             </div>
         </div>
         <div class="desc">
             <h1>{nfttitle}</h1>
-            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:#689746;"></div>
+            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:#bcff01;"></div>
             <p>{desc}</p>
             <p>OWNED BY: <a style="display:inline;" href="{ownerlink}"><b>{owner}</b></a></p>
             <p>PROTOCOL: <b>{protocol}</b></p>
@@ -33,12 +36,13 @@
 <style>
     .card{
         text-align: left;
-        background: linear-gradient(45deg, #004a43, rgba(104, 151, 70, 0.521));
+        background: linear-gradient(45deg, #350b32c4, rgba(80, 0, 255, 0.52));
         width: 410px;
         min-height: 480px;
-        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
-        border-radius: 15px;
+        box-shadow: 0px 15px 60px -5px rgba(20, 24, 223, 0.32);
+        border-radius: 30px;
         padding: 30px;
+        max-width: calc(100vw - 10rem);
     }
     .nft-image{
         display: flex;
@@ -47,27 +51,38 @@
         z-index: 4;
     }
     p > a{
-        color:#689746;
+        color:#bcff01;
+    }
+    @keyframes float {
+        0%{transform:translatey(0px);}
+        25%{transform:translatey(5px);}
+        50%{transform:translatey(0px);}
+        75%{transform:translatey(-5px);}
+        100%{transform:translatey(0px);}
     }
     .nft-image > img{
+        animation: float 5s linear infinite;
         width: 300px;
         height: 300px;
-        margin-left: -70px;
         flex-shrink: 0;
         position: relative;
         z-index: 2;
         border-radius: 15px;
         z-index: 1;        
-        box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+        box-shadow: 0px 15px 35px -5px rgba(0, 0, 0, 0.67);
 
+    }
+    @media screen and (max-width: 1000px) {
+        .row{max-width:400px;flex-flow:column!important;}
+  
     }
     .row{display:flex;flex-flow:row;}
     .links{    
         flex: 1;
-        padding-left: 20px;
+        padding-left: unset;
         display: flex;
-        flex-direction: column;
-        align-items: center;}
+        flex-flow: wrap;
+        justify-content: center;}
     .card-wrapper{
         display: flex;
     flex-flow: wrap;
