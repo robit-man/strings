@@ -1,6 +1,6 @@
 <script>
     import { Router, Link, Route, link } from "svelte-routing";
-    import { slide } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
 </script>
 
 <div>
@@ -18,7 +18,7 @@
         </div>    
     </div>
     
-        <canvas style="z-index: -1;height: 100vh;
+        <canvas transition:fade style="z-index: -1;height: 100vh;
         position: absolute;
         top: 0px;
         width: 100vw;
