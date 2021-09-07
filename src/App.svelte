@@ -7,6 +7,8 @@
     export let url = "";
     import { createEventDispatcher, getContext, onMount } from 'svelte';
     import { setContext } from 'svelte';
+    import { fade } from 'svelte/transition';
+
 </script>
 
 <div class="main">

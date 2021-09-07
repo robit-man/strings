@@ -28,7 +28,7 @@ import 'swiper/css';
         desc="Nft Description Placeholder"
         owner="Owner ID"
          />
-         <img class="scrollimg" src="/imgs/swipe.gif" alt="">
+         <img class="scrollimg" src="/imgs/Bar-Arrow.gif" alt="">
       </SwiperSlide>
       <SwiperSlide>      
         <Card />
@@ -48,7 +48,7 @@ import 'swiper/css';
      
     </footer>
   </div>
-  <canvas style="height: 100vh;
+  <canvas transition:fade style="height: 100vh;
   position: absolute;
   top: 0px;
   width: 100vw;
@@ -464,7 +464,6 @@ body {
          border-radius:50%;
          right: 0px;
          top: calc(50% - 15rem);
-         transform: rotate(90deg);
          height: 30rem;
 }
 
