@@ -7,12 +7,27 @@ contract SpacePepe is ERC721Tradable {
     uint256 public MAX_SUPPLY = 100;
     uint256 public basePrice = 500 ether;
     uint256 public incrementPrice = 5 ether;
-    mapping(address => bool) minted;
+    mapping(address => bool) public minted;
 
     constructor(string memory baseURI_)
         ERC721Tradable("SpacePepeFTM", "SPFTM", address(0))
     {
         baseURI = baseURI_;
+    }
+
+
+    function mint() external payable {
+        uint256 newTokenId = _getNextTokenId();
+        uint256 price = basePrice + (incrementPrice * currentTokenId);
+        require(msg.value >= price, "Insufficient Purchase Amount");
+        require(newTokenId < MAX_SUPPLY, "Sold out");
+        require(minted[_msgSender()] == false, "Already bought");
+        minted[_msgSender()] = true;
+        _mint(_msgSender(), newTokenId);
+        _incrementTokenId();
+        if (msg.value > price)
+            payable(_msgSender()).transfer(msg.value - price);
+        payable(owner()).transfer(price);
     }
 
     function tokenURI(uint256 tokenId)
@@ -78,14 +93,4 @@ contract SpacePepe is ERC721Tradable {
         return ContextMixin.msgSender();
     }
 
-    function mint() external payable {
-        uint256 newTokenId = _getNextTokenId();
-        uint256 price = basePrice + (incrementPrice * currentTokenId);
-        require(msg.value >= price, "Insufficient Purchase Amount");
-        _mint(_msgSender(), newTokenId);
-        _incrementTokenId();
-        if (msg.value > price)
-            payable(_msgSender()).transfer(msg.value - price);
-        payable(owner()).transfer(price);
-    }
 }
