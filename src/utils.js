@@ -8,7 +8,9 @@ import {
     network,
     nfts,
     alreadyMinted,
-    etherLoading
+    etherLoading,
+    balances,
+    totalSupply
     } from './store.js';
 import { abi } from './abis/SpacePepe.json';
 import { get } from 'svelte/store'
@@ -29,26 +31,46 @@ export async function initProvider(app, reconnect = false) {
     }
 
     var nid = await p.getNetwork()
-    nid = nid.chainId;
     var nftContract = new ethers.Contract(NFT_CONTRACT_ADDRESS, abi, signer);
     var minted = await nftContract.minted(addr)
+    var total = await nftContract.currentTokenId();
+
+    totalSupply.set(total)
     address.set(addr)
     contract.set(nftContract);
-    network.set(nid);
+    network.set(nid.chainId);
     provider.set(p);
     alreadyMinted.set(minted);
 
-    var totalSupply = await nftContract.currentTokenId();
     var baseURI = await nftContract.baseTokenURI();
-
     var resp = await fetch('/.netlify/functions/get_gallery', {
         method: 'POST',
         body: JSON.stringify({})
     })
+
     resp = await (await (resp).json())
-    console.log(resp)
+    
     nfts.set(resp);
     app = app;
+    total = parseInt(total.toString())
+    var iterate = [...Array(total).keys()]
+    var bals = [];
+    
+    var each = iterate.forEach( async i => {
+        var owner
+        try {
+            owner = await nftContract.ownerOf(i+1)
+        }
+        catch(err) {
+            console.log(err)
+        }
+        if(owner == addr) {
+            bals.push(i)
+            balances.set(bals);
+        }
+    })
+    
+    subscribeToTransferEvent(window.ethereum, nftContract)
     // Subscribe to accounts change
     window.ethereum.on("accountsChanged", onAccountsChanged);
     window.ethereum.on("chainChanged", onChainChanged);
@@ -79,6 +101,8 @@ export async function mintPepe() {
     }
     etherLoading.set(false);
     alreadyMinted.set(true);
+    supply = await contract.totalSupply();
+    totalSupply.set(supply);
 }
 
 function setProviderWithLocal(q) {
@@ -109,3 +133,13 @@ function onDisconnect() {
     nfts.set(undefined)    
     console.log("onDisconnect");
 }
+
+export async function subscribeToTransferEvent(provider,contract) {
+    const filter = {
+      topics: [ethers.utils.id('Transfer(address,address,uint256')]
+    };
+    provider.on(filter, async () => {
+        var total = await contract.totalSupply();
+        totalSupply.set(total)
+    });
+  }

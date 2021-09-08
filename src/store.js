@@ -25,5 +25,7 @@ export const provider = createWritableStore('provider', undefined);
 export const network = createWritableStore('network', undefined);
 export const nfts = createWritableStore('nfts', undefined);
 export const alreadyMinted = createWritableStore('alreadyMinted', false);
-export const etherLoading = createWritableStore('etherLoading', false)
+export const etherLoading = createWritableStore('etherLoading', false);
+export const balances = createWritableStore('balances', [])
+export const totalSupply = createWritableStore('totalSupply', 0);
 

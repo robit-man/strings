@@ -1,7 +1,7 @@
 <script>
     import { Router, Link, Route, link } from "svelte-routing";
     import { fade } from 'svelte/transition';
-    import { address, contract, provider, alreadyMinted, etherLoading } from '../store';
+    import { address, contract, provider, alreadyMinted, etherLoading,totalSupply } from '../store';
     import { onMount, getContext} from 'svelte';
     import { 
         initProvider,
@@ -33,6 +33,9 @@
             <div class="mint-title-box">
                 <h1>MINT A SPACEPEPE</h1>
                 <p>Only one per account.</p>
+                {#if $totalSupply > 0}
+                <p>{$totalSupply}/100 Minted</p>
+                {/if}
             </div>
             <div class="mint-image-wrapper">
               {#if $etherLoading == true}
