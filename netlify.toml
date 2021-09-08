@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   functions = "functions-build"
-  publish = "build"
+  publish = "public"
 [build.environment]
   VUE_APP_INFURA_ID = "6dccc3daffad46d280f872d4a73721e1"
   FAUNADB_SERVER_SECRET = "fnAESiNtj_ACQAVh6pM8vECd16tCQka6SQqH6Fwu"
