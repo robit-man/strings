@@ -43,7 +43,7 @@
     .card{
         text-align: left;
         background: linear-gradient(45deg, #350b32c4, rgba(80, 0, 255, 0.52));
-        width: 410px;
+        width: auto;
         min-height: 480px;
         box-shadow: 0px 15px 60px -5px rgba(20, 24, 223, 0.32);
         border-radius: 30px;
