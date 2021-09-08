@@ -85,7 +85,7 @@ export async function mintPepe() {
     const nftContract = get(contract)
     const signer = p.getSigner();
     try {
-        const resp = await nftContract.mint({ value: ethers.utils.parseEther('1') });
+        const resp = await nftContract.mint({ value: ethers.utils.parseEther('500') });
         etherLoading.set(true);
 
         await resp.wait().then(
