@@ -32,7 +32,7 @@ var metadata = {
   <div class="wrapper">
         <Swiper style="
         height: max-content!important;
-        margin: auto!important;"
+        margin-top:100px!important;"
         spaceBetween={50}
         slidesPerView={1}
         on:slideChange={() => console.log('slide change')}
