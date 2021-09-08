@@ -73,8 +73,9 @@
     width:100vw;text-align:center;font-size:5rem;
 }
 header{z-index:5;position:relative;}
-
-.pepebottom{width:100vw;text-align:center;font-size:2rem;}
+@media only screen and (max-width: 900px) {
+    .pepebottom{width:100vw;text-align:center;font-size:3rem;}
+}
 footer{position:relative;bottom:0px;left:0px;width:100vw;height:auto;}
 
 
