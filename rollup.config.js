@@ -5,9 +5,11 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
 import autoPreprocess from 'svelte-preprocess';
+import json from '@rollup/plugin-json';
+import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
-
+const address = '1' //process.env.NFT_CONTRACT_ADDRESS;
 function serve() {
 	let server;
 
@@ -35,9 +37,27 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
+		globals: {
+			'web3': 'Web3',
+			'buffer': 'buffer',
+			'crypto': 'Crypto',
+			'stream': 'stream',
+			'util': 'util',
+			'assert': 'assert',
+			'events': 'events',
+			'string_decoder': 'string_decoder',
+			'url': 'url',
+			'http': 'http',
+			'https': 'https',
+			'os': 'os',
+			'punycode': 'punycode'
+		}		
 	},
 	plugins: [
+		replace({
+
+		  }),			
 		svelte({
 			preprocess: autoPreprocess(),
 			compilerOptions: {
@@ -59,6 +79,7 @@ export default {
 			dedupe: ['svelte']
 		}),
 		commonjs(),
+	
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
@@ -70,7 +91,8 @@ export default {
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
-		production && terser()
+		production && terser(),
+		json()
 	],
 	watch: {
 		clearScreen: false

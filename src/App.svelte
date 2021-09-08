@@ -5,10 +5,14 @@
     import About from "./pages/About.svelte";
     import Four from "./pages/Four.svelte";
     export let url = "";
-    import { createEventDispatcher, getContext, onMount } from 'svelte';
     import { setContext } from 'svelte';
+    import { writable } from 'svelte/store';
     import { fade } from 'svelte/transition';
-
+    
+    const app = writable({});
+    //export const innerHeight = writable(1000)
+    //export const innerWidth = writable(1000) Any use for these
+    setContext('app', app);
 </script>
 
 <div class="main">

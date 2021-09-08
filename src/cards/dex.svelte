@@ -6,28 +6,34 @@
     export let desc = '11 SpacePepes from the planet Serpo are on a Space Expedition from the star system Zeta Reticuli. ';
     export let protocol = 'ERC-1155';
     export let owner = 'CA785C';
-    export let ownerlink = 'https://opensea.io/0xca785ccb00933e6760130432757ac6ee6428db6e';
+    export let ownerlink = undefined;
 </script>
 
 <div class="card-wrapper">
-
+    
     <div class="card">
         <div class="row">
             <div class="nft-image">
                 <img src="{nftimage}" alt="">
             </div>
+            <!--
             <div class="links">
                 <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
                 <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
                 <a href="{nftlink}"><img style="margin:1rem;" width="64px" height="64px" src="/imgs/external-link.svg" alt=""></a>
             </div>
+            -->
         </div>
         <div class="desc">
             <h1>{nfttitle}</h1>
             <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:#bcff01;"></div>
             <p>{desc}</p>
-            <p>OWNED BY: <a style="display:inline;" href="{ownerlink}"><b>{owner}</b></a></p>
+            {#if ownerlink}
+                <p>OWNED BY: <a style="display:inline;" href="{ownerlink}"><b>{owner}</b></a></p>
+            {/if}
             <p>PROTOCOL: <b>{protocol}</b></p>
+            <slot>
+            </slot>            
         </div>
     </div>
 

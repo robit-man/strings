@@ -1,19 +1,36 @@
 <script>
-import { onMount } from "svelte";
+import { onMount, getContext} from 'svelte';
 import { slide, fade } from 'svelte/transition';
 import { Router, Link, Route } from "svelte-routing";
+import { address, contract, provider, nfts } from '../store';
 import Card from "../cards/dex.svelte"
 import { Swiper, SwiperSlide } from 'swiper/svelte';
     //Help import data from opensea and pass into SwiperSlide <3 
-
+    import { 
+        initProvider,
+    } from '../utils.js';
 import 'swiper/css';
+async function connectEthProvider(reconnect=false) {
+    if(!$address) {
+        await initProvider(app, reconnect);
+        $address = $address;
+    }
+}
 
-
+function connectWallet(event) {
+    connectEthProvider(false);
+}   
+var metadata = {
+     "name": "SpacePepesFTM",
+     "description": "100 SpacePepe's from an unknown F-type main sequence star have received an arrival beacon through Lieutenant Pepe that extraterrestrial contact with Earth has been established. They want to use the energy of the earthlings living there and establish a permanent settlement. Though they look terrifying, these SpacePepes are smart creatures that love the fine arts like the Opera.",
+     "image": 'https://spacepepes.com/pepes/',
+     "external_url": 'https://spacepepes.com/pepes/'
+};
 </script>
 
 <main>
   <div class="wrapper">
-     
+
         <Swiper style="
         height: max-content!important;
         margin: auto!important;"
@@ -22,28 +39,37 @@ import 'swiper/css';
         on:slideChange={() => console.log('slide change')}
         on:swiper={(e) => console.log(e.detail[0])}
       >
+      {#if !$nfts }
+        <SwiperSlide>      
+          <Card 
+          nfttitle="NOT CONNECTED"
+          desc="Nft Description Placeholder"
+          owner="NO ONE"
+          protocol='ERC-721'
+            >
+            <div><button on:click={connectWallet}>CONNECT WALLET</button></div>
+          </Card>
+
+          
+        </SwiperSlide>
+  
+      {:else}     
+      {#each $nfts as nft} 
       <SwiperSlide>      
         <Card 
-        nfttitle="NFT TITLE"
-        desc="Nft Description Placeholder"
-        owner="Owner ID"
-         />
-         <img class="scrollimg" src="/imgs/Bar-Arrow.gif" alt="">
+        nfttitle="{metadata['name']} #{nft['nftId']}"
+        desc="{metadata['description']}"
+        owner="Owner I"
+        nftimage='/pepes/{nft['image']}'
+        protocol='ERC-721'
+          />
+          <img class="scrollimg" src="/imgs/Bar-Arrow.gif" alt="" />
+        
       </SwiperSlide>
-      <SwiperSlide>      
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide>      
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide>      
-        <Card />
-      </SwiperSlide>
-      <SwiperSlide>      
-        <Card />
-      </SwiperSlide>
-        ...
-      </Swiper>
+      {/each}
+      
+      {/if}
+    </Swiper>
     <footer transition:slide >
      
     </footer>
@@ -53,8 +79,8 @@ import 'swiper/css';
   top: 0px;
   width: 100vw;
   left: 0px;" id="starfield"></canvas>
-  <script>
-  
+
+<script>
 /*****************************************************************************
 The MIT License (MIT)
 

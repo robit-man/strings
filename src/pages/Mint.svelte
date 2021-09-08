@@ -1,6 +1,30 @@
 <script>
     import { Router, Link, Route, link } from "svelte-routing";
     import { fade } from 'svelte/transition';
+    import { address, contract, provider } from '../store';
+    import { onMount, getContext} from 'svelte';
+    import { 
+        initProvider,
+        mintPepe,
+    } from '../utils.js';
+
+    const app = getContext('app');
+    var addressDisplay = ''
+    async function connectEthProvider(reconnect=false) {
+        if(!$address) {
+            await initProvider(app, reconnect);
+            addressDisplay = String($address).slice(0,10)+"...";
+            $address = $address;
+        }
+    }
+
+    function connectWallet(event) {
+        connectEthProvider(false);
+    }    
+
+    async function mint(event) {
+      await mintPepe(contract, provider);
+    }
 </script>
 
 <div>
@@ -8,12 +32,23 @@
         <div class="mint-box">
             <div class="mint-title-box">
                 <h1>MINT A SPACEPEPE</h1>
+                <p>Only one per account.</p>
             </div>
             <div class="mint-image-wrapper">
                 <img src="/imgs/mintpepe.png" alt="">
             </div>
+            <div>
+              Price: 500 FTM
+            </div>
             <div class="mint-button-wrapper">
-                <button><h2>APPROVE MINT <img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
+                {#if !$address}
+                  <button on:click={connectWallet}><h2>CONNECT WALLET</h2></button>
+                {:else}
+                  <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
+                {/if}
+            </div>
+            <div>
+                {addressDisplay}
             </div>
         </div>    
     </div>

@@ -5,8 +5,7 @@ import "./ERC721Tradable.sol";
 contract SpacePepe is ERC721Tradable {
     string baseURI;
     uint256 public MAX_SUPPLY = 100;
-    uint256 public basePrice = 500 ether;
-    uint256 public incrementPrice = 5 ether;
+    uint256 public basePrice = 1 ether;
     mapping(address => bool) public minted;
 
     constructor(string memory baseURI_)
@@ -15,19 +14,15 @@ contract SpacePepe is ERC721Tradable {
         baseURI = baseURI_;
     }
 
-
     function mint() external payable {
         uint256 newTokenId = _getNextTokenId();
-        uint256 price = basePrice + (incrementPrice * currentTokenId);
-        require(msg.value >= price, "Insufficient Purchase Amount");
+        require(msg.value == basePrice, "Incorrect ETH Amount");
         require(newTokenId < MAX_SUPPLY, "Sold out");
-        require(minted[_msgSender()] == false, "Already bought");
+        require(!minted[_msgSender()], "Already bought");
         minted[_msgSender()] = true;
-        _mint(_msgSender(), newTokenId);
         _incrementTokenId();
-        if (msg.value > price)
-            payable(_msgSender()).transfer(msg.value - price);
-        payable(owner()).transfer(price);
+        _mint(_msgSender(), newTokenId);
+        payable(owner()).transfer(msg.value);
     }
 
     function tokenURI(uint256 tokenId)
