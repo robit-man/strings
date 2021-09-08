@@ -72,7 +72,7 @@ var metadata = {
     </footer>
   </div>
   <canvas transition:fade style="height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0px;
   width: 100vw;
   left: 0px;" id="starfield"></canvas>
@@ -467,9 +467,8 @@ body {
   perspective: 340px;
 }
 
-main{margin-top:64px;}
 .nav-row{
-  position: absolute;
+  position: relative;
   height:100px;top:0px;width:calc(100vw - 4rem);
   display:flex;
   flex-flow:row;
@@ -478,8 +477,9 @@ main{margin-top:64px;}
 }
 .wrapper{    
   position: relative;
-  height: 100vh;
+    height: auto;
     display: flex;
+    min-height: 70vh;
 }
 button{
   background-color:transparent;

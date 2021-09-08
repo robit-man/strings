@@ -65,7 +65,7 @@
     </div>
     
         <canvas transition:fade style="z-index: -1;height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0px;
         width: 100vw;
         left: 0px;" id="canvas"></canvas>
@@ -183,7 +183,6 @@ animation();
       padding:2rem 0rem;
       margin:auto;
       min-height:70vh;
-      margin-top:70px;
 
         display: flex;
     }

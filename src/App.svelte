@@ -4,7 +4,7 @@
     import Mint from "./pages/Mint.svelte";
     import About from "./pages/About.svelte";
     import Four from "./pages/Four.svelte";
-    export let url = "";
+    export let url = '';
     import { setContext } from 'svelte';
     import { writable } from 'svelte/store';
     import { fade } from 'svelte/transition';
@@ -13,6 +13,7 @@
     //export const innerHeight = writable(1000)
     //export const innerWidth = writable(1000) Any use for these
     setContext('app', app);
+    console.log({url});
 </script>
 
 <div class="main">
@@ -30,10 +31,10 @@
       </header>
     <Router url="{url}">
         {#if url === '/mint'}
-        <Link style="top:0px;left:opx;position:fixed;z-index:6;" to="/">
+        <Link style="top:0px;left:opx;position:absolute;z-index:6;" to="/">
             <img class="mint" style="margin:2.5rem;" height="48px" src="/imgs/home.png" alt=""></Link>
         {:else}
-        <Link style="top:0px;left:opx;position:fixed;z-index:6;" to="/mint">
+        <Link style="top:0px;left:opx;position:absolute;z-index:6;" to="/mint">
             <img class="mint" style="margin:2.5rem;" height="48px" src="/imgs/mint.png" alt=""></Link>
         
         {/if}
@@ -57,7 +58,7 @@
 		margin: 0 auto;
 	}
     .nav-row{
-  position: fixed;
+  position: relative;
   height:100px;top:0px;width:calc(100vw - 4rem);
   display:flex;
   flex-flow:row;
