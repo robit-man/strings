@@ -44,7 +44,7 @@
                 <img src="/imgs/mintpepe.png" alt="">
               {/if}
             </div>
-            <div style="margin-bottom:1rem;">
+            <div style="margin-bottom:2rem;">
               Price: 500 FTM
             </div>
             {#if $etherLoading === false}
