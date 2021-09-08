@@ -67,18 +67,7 @@ button {
 button:hover {
 	padding:0.5rem 1rem;
 	color: black;
+	border:2px solid white;
 	background-color: white;
 	outline: none;
-}
-
-button:disabled {
-	color: #999;
-}
-
-button:not(:disabled):active {
-	background-color: #ddd;
-}
-
-button:focus {
-	border-color: #666;
 }
