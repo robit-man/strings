@@ -466,7 +466,8 @@ body {
   background: #000;
   perspective: 340px;
 }
-.main{margin-top:64px;}
+
+main{margin-top:64px;}
 .nav-row{
   position: absolute;
   height:100px;top:0px;width:calc(100vw - 4rem);
