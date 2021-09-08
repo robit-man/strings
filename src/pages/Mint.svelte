@@ -52,7 +52,7 @@
                 {#if !$address}
                   <button on:click={connectWallet}><h2>CONNECT WALLET</h2></button>
                 {:else if $alreadyMinted == true}
-                  <button>MY SPACEPEPES</button>
+                  <button><h2>MY SPACEPEPES</h2></button>
                 {:else}
                   <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
                 {/if}
@@ -210,7 +210,7 @@ animation();
     }
     button:hover{
         background-color:white;
-
+        padding:0.5rem 2rem;border:5px solid white;
     }
     button:hover h2 > img{
 filter:invert(0);
@@ -218,7 +218,7 @@ filter:invert(0);
     button h2 > img{
 filter:invert(1);
     }
-    button{cursor:pointer;background-color:transparent;border-radius:0.5rem;}
+    button{cursor:pointer;background-color:transparent;border-radius:1rem;border:5px solid white;padding:0.5rem 2rem;}
     .mint-button-wrapper{
         display:flex;flex-flow:row;justify-content: center;
     }
