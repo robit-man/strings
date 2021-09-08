@@ -180,7 +180,7 @@ animation();
     .wrapper{    
       position: relative;
       max-width:1024px;
-      padding:2rem;
+      padding:2rem 0rem;
       margin:auto;
       min-height:70vh;
       margin-top:70px;

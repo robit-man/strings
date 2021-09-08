@@ -30,9 +30,7 @@ var metadata = {
 
 <main>
   <div class="wrapper">
-        <Swiper style="
-        height: max-content!important;
-        margin-top:128px!important;"
+        <Swiper style="height:max-content!important;margin:auto!important;"
         spaceBetween={50}
         slidesPerView={1}
         on:slideChange={() => console.log('slide change')}
@@ -485,6 +483,10 @@ button{
   background-color:transparent;
 }
 button:hover{ background-color:white;
+}    
+@media screen and (max-width: 1000px) {
+
+
 }
 .scrollimg{
   mix-blend-mode: screen;
