@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  functions = "functions-build"
+  functions = "functions"
   publish = "public"
 [build.environment]
   VUE_APP_INFURA_ID = "6dccc3daffad46d280f872d4a73721e1"
