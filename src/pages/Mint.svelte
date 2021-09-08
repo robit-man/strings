@@ -44,7 +44,7 @@
                 <img src="/imgs/mintpepe.png" alt="">
               {/if}
             </div>
-            <div>
+            <div style="margin-bottom:1rem;">
               Price: 500 FTM
             </div>
             {#if $etherLoading === false}
@@ -183,7 +183,7 @@ animation();
       padding:2rem;
       margin:auto;
       min-height:70vh;
-      margin-top:132px;
+      margin-top:70px;
 
         display: flex;
     }
@@ -193,7 +193,7 @@ animation();
         100%{transform:scale(1);}
     }
     .mint-image-wrapper{
-        padding:2rem 0rem;
+        padding:1rem 0rem;
     }
     .mint-image-wrapper > img{
         overflow:hidden;border-radius: 1rem;        
