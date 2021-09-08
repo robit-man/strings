@@ -9,3 +9,5 @@
 [functions]
   directory = "functions-build"
   node_bundler = "esbuild"
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"  
