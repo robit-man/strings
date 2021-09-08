@@ -30,7 +30,8 @@
       </header>
     <Router url="{url}">
         
-        <Link style="top:0px;left:opx;position:fixed;z-index:6;" to="/mint"><img style="margin:2.5rem;" height="48px" src="/imgs/mint.png" alt=""></Link>
+        <Link style="top:0px;left:opx;position:fixed;z-index:6;" to="/mint">
+            <img class="mint" style="margin:2.5rem;" height="48px" src="/imgs/mint.png" alt=""></Link>
 
         <Route path="/"><Home /></Route>
         <Route path="/mint" component={Mint}><Mint /></Route>
@@ -76,4 +77,8 @@
 .icon-box > a{margin:1rem;transition:transform 0.2s ease;}
 .nav-links > a:hover{transform:scale(1.1);}
 .icon-box > a:hover{transform:scale(1.1);}
+.mint{
+    transition: transform 0.2s ease;
+}
+.mint:hover{transform:scale(1.1);}
 </style>
