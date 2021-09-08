@@ -1,7 +1,7 @@
 <script>
     import { Router, Link, Route, link } from "svelte-routing";
     import { fade } from 'svelte/transition';
-    import { address, contract, provider } from '../store';
+    import { address, contract, provider, alreadyMinted, etherLoading } from '../store';
     import { onMount, getContext} from 'svelte';
     import { 
         initProvider,
@@ -35,18 +35,26 @@
                 <p>Only one per account.</p>
             </div>
             <div class="mint-image-wrapper">
+              {#if $etherLoading == true}
+                <img style='max-width:30%; margins:auto;' src="/imgs/pepe_loading.gif" alt="">
+              {:else}
                 <img src="/imgs/mintpepe.png" alt="">
+              {/if}
             </div>
             <div style="margin-bottom:1rem;">
               Price: 500 FTM
             </div>
+            {#if $etherLoading === false}
             <div class="mint-button-wrapper">
                 {#if !$address}
                   <button on:click={connectWallet}><h2>CONNECT WALLET</h2></button>
+                {:else if $alreadyMinted == true}
+                  <button>MY SPACEPEPES</button>
                 {:else}
                   <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
                 {/if}
             </div>
+            {/if}
             <div>
                 {addressDisplay}
             </div>
