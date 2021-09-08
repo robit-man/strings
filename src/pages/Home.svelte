@@ -1,10 +1,10 @@
 <script>
 import { onMount, getContext} from 'svelte';
 import { slide, fade } from 'svelte/transition';
-import { Router, Link, Route } from "svelte-routing";
 import { address, contract, provider, nfts, balances } from '../store';
 import Card from "../cards/dex.svelte"
 import { Swiper, SwiperSlide } from 'swiper/svelte';
+
     //Help import data from opensea and pass into SwiperSlide <3 
     import { 
         initProvider,
@@ -68,7 +68,6 @@ var metadata = {
       {/if}
     </Swiper>
     <footer transition:slide >
-
     </footer>
   </div>
   <canvas transition:fade style="height: 100vh;

@@ -1,5 +1,5 @@
 <script>
-    import { Router, Link, Route, link } from "svelte-routing";
+    import { Link } from "svelte-routing";
     import { fade } from 'svelte/transition';
     import { address, contract, provider, alreadyMinted, etherLoading,totalSupply } from '../store';
     import { onMount, getContext} from 'svelte';
@@ -52,7 +52,7 @@
                 {#if !$address}
                   <button on:click={connectWallet}><h2>CONNECT WALLET</h2></button>
                 {:else if $alreadyMinted == true}
-                  <button><h2>MY SPACEPEPES</h2></button>
+                  <Link to='/mypepes'><button ><h2>MY SPACEPEPES</h2></button></Link>
                 {:else}
                   <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
                 {/if}

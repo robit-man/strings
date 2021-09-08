@@ -4,6 +4,7 @@
     import Mint from "./pages/Mint.svelte";
     import About from "./pages/About.svelte";
     import Four from "./pages/Four.svelte";
+    import MyPepes from "./pages/MyPepes.svelte"
     export let url = '';
     import { setContext } from 'svelte';
     import { writable } from 'svelte/store';
@@ -13,7 +14,7 @@
     //export const innerHeight = writable(1000)
     //export const innerWidth = writable(1000) Any use for these
     setContext('app', app);
-    console.log({url});
+    console.log(window.location.href);
 </script>
 
 <div class="main">
@@ -42,6 +43,7 @@
         <Route path="/mint" component={Mint}><Mint /></Route>
         <Route path="/mint"><Mint /></Route>
         <Route path="/about" component={About}><About /></Route>
+        <Route path="/mypepes" component={MyPepes}></Route>
         <Route path="/*"><Four /></Route>
 
     </Router>

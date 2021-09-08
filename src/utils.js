@@ -51,6 +51,7 @@ export async function initProvider(app, reconnect = false) {
     resp = await (await (resp).json())
     
     nfts.set(resp);
+    console.log(resp);
     app = app;
     total = parseInt(total.toString())
     var iterate = [...Array(total).keys()]
@@ -65,7 +66,7 @@ export async function initProvider(app, reconnect = false) {
             console.log(err)
         }
         if(owner == addr) {
-            bals.push(i)
+            bals.push(resp[i])
             balances.set(bals);
         }
     })
