@@ -80,6 +80,7 @@
     }
     @media screen and (max-width: 1000px) {
         .row{max-width:400px;flex-flow:column!important;}
+        .nft-img{width:100%;height:auto;}
   
     }
     .row{display:flex;flex-flow:row;}
