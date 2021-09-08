@@ -23,7 +23,7 @@ function returnSuccess(data, statusCode = 200) {
   }
 }
 exports.handler = async function(event) {
-    provider = await ethers.getDefaultProvider('https://rpc.testnet.fantom.network/')
+    provider = await ethers.getDefaultProvider('https://rpcapi.fantom.network')
     const nftContract = new ethers.Contract(process.env.NFT_CONTRACT_ADDRESS, abi, provider);
     var currentNft = await nftContract.currentTokenId();
     currentNft = parseInt(currentNft.toString())
