@@ -30,7 +30,7 @@ var metadata = {
 
 <main>
   <div class="wrapper">
-        <Swiper class="swiper-style"
+        <Swiper style="height:max-content!important;margin:auto!important;"
         spaceBetween={50}
         slidesPerView={1}
         on:slideChange={() => console.log('slide change')}
@@ -474,10 +474,6 @@ body {
   justify-content: space-between;
   margin:auto;padding:1rem 2rem;
 }
-.swiper-style{
-  height: max-content!important;
-  margin:auto;
-}
 .wrapper{    
   position: relative;
   height: 100vh;
@@ -489,9 +485,8 @@ button{
 button:hover{ background-color:white;
 }    
 @media screen and (max-width: 1000px) {
-  .swiper-style{
-    margin-top:128px!important;
-  }
+
+
 }
 .scrollimg{
   mix-blend-mode: screen;
