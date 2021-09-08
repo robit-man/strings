@@ -218,7 +218,7 @@ filter:invert(0);
     button h2 > img{
 filter:invert(1);
     }
-    button{cursor:pointer;background-color:transparent;border-radius:0.5rem;border:5px solid white;padding:0rem 2rem;}
+    button{cursor:pointer;background-color:transparent;border-radius:0.5rem;}
     .mint-button-wrapper{
         display:flex;flex-flow:row;justify-content: center;
     }

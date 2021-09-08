@@ -481,6 +481,11 @@ body {
   height: 100vh;
     display: flex;
 }
+button{
+  background-color:transparent;
+}
+button:hover{ background-color:white;
+}
 .scrollimg{
   mix-blend-mode: screen;
          filter: brightness(0.5);
