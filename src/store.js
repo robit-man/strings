@@ -27,4 +27,5 @@ export const nfts = createWritableStore('nfts', undefined);
 export const alreadyMinted = createWritableStore('alreadyMinted', false);
 export const etherLoading = createWritableStore('etherLoading', false);
 export const balances = createWritableStore('balances', [])
+export const maxSupply = createWritableStore('maxSupply', 0);
 export const totalSupply = createWritableStore('totalSupply', 0);
