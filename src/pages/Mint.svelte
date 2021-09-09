@@ -54,11 +54,7 @@
                 {:else if $alreadyMinted == true}
                   <Link to='/mypepes'><button ><h2>MY SPACEPEPES</h2></button></Link>
                 {:else}
-                  {#if parseInt($totalSupply) < parseInt($maxSupply)}
-                  <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
-                  {:else}
                   <button><h2>SOLD OUT</h2></button>
-                  {/if}
                 {/if}
             </div>
             {/if}
