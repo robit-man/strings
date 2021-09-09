@@ -4,6 +4,7 @@ import { slide, fade } from 'svelte/transition';
 import { address, contract, provider, nfts, balances } from '../store';
 import Card from "../cards/dex.svelte"
 import { Swiper, SwiperSlide } from 'swiper/svelte';
+import "swiper/css/pagination"
 
     //Help import data from opensea and pass into SwiperSlide <3 
     import { 
@@ -15,7 +16,13 @@ async function connectEthProvider(reconnect=false) {
         await initProvider(app, reconnect);
         $address = $address;
     }
-}
+}import SwiperCore, {
+  Pagination
+} from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
+
 
 function connectWallet(event) {
     connectEthProvider(false);
@@ -32,24 +39,24 @@ var metadata = {
   <div class="wrapper">
         <Swiper style="height:max-content!important;margin:auto!important;"
         spaceBetween={50}
-        slidesPerView={1}
+        slidesPerView={1} pagination='{{
+          "clickable": true
+        }}'
         on:slideChange={() => console.log('slide change')}
         on:swiper={(e) => console.log(e.detail[0])}
       >
       {#if !$nfts }
-        <SwiperSlide>      
-          <Card 
-          nfttitle="NOT CONNECTED"
-          desc="Nft Description Placeholder"
-          owner="NO ONE"
-          protocol='ERC-721'
-            >
-            <div><button on:click={connectWallet}>CONNECT WALLET</button></div>
-          </Card>
+      <SwiperSlide>      
+        <Card 
+        nfttitle="NOT CONNECTED"
+        desc="Nft Description Placeholder"
+        owner="NO ONE"
+        protocol='ERC-721'
+          >
+          <div><button on:click={connectWallet}>CONNECT WALLET</button></div>
+        </Card>
+      </SwiperSlide>
 
-          
-        </SwiperSlide>
-  
       {:else}     
       {#each $nfts as nft} 
       <SwiperSlide>      

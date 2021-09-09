@@ -71,3 +71,10 @@ button:hover {
 	background-color: white;
 	outline: none;
 }
+.swiper-pagination-bullet{
+	background: #4d4fc8;
+	opacity: 0.5;
+}
+.swiper-pagination-bullet-active{
+	background:#6800ff;
+}

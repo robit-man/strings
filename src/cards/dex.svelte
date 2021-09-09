@@ -55,6 +55,7 @@
         align-items: flex-start;
         position: relative;
         z-index: 4;
+        width:100%;
     }
     p > a{
         color:#bcff01;
@@ -68,10 +69,11 @@
     }
     .nft-image > img{
         animation: float 5s linear infinite;
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        height: auto;
         flex-shrink: 0;
         position: relative;
+        margin-bottom:2rem;
         z-index: 2;
         border-radius: 15px;
         z-index: 1;        
@@ -92,7 +94,7 @@
         justify-content: center;}
     .card-wrapper{
         display: flex;
-    flex-flow: wrap;
+    flex-flow: wrap;padding:4rem 0rem;
     justify-content: center;
 max-width:512px;margin:auto;
     }
