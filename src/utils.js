@@ -10,7 +10,8 @@ import {
     alreadyMinted,
     etherLoading,
     balances,
-    totalSupply
+    totalSupply,
+    maxSupply
     } from './store.js';
 import { abi } from './abis/SpacePepe.json';
 import { get } from 'svelte/store'
@@ -34,6 +35,7 @@ export async function initProvider(app, reconnect = false) {
     var nftContract = new ethers.Contract(NFT_CONTRACT_ADDRESS, abi, signer);
     var minted = await nftContract.minted(addr)
     var total = await nftContract.currentTokenId();
+    var supply = await nftContract.MAX_SUPPLY();
 
     totalSupply.set(total)
     address.set(addr)
@@ -41,6 +43,7 @@ export async function initProvider(app, reconnect = false) {
     network.set(nid.chainId);
     provider.set(p);
     alreadyMinted.set(minted);
+    maxSupply.set(supply);
 
     var baseURI = await nftContract.baseTokenURI();
     var resp = await fetch('/.netlify/functions/get_gallery', {

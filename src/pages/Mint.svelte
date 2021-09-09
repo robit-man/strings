@@ -1,7 +1,7 @@
 <script>
     import { Link } from "svelte-routing";
     import { fade } from 'svelte/transition';
-    import { address, contract, provider, alreadyMinted, etherLoading,totalSupply } from '../store';
+    import { address, contract, provider, alreadyMinted, etherLoading, totalSupply, maxSupply } from '../store';
     import { onMount, getContext} from 'svelte';
     import { 
         initProvider,
@@ -54,7 +54,11 @@
                 {:else if $alreadyMinted == true}
                   <Link to='/mypepes'><button ><h2>MY SPACEPEPES</h2></button></Link>
                 {:else}
+                  {#if parseInt($totalSupply) < parseInt($maxSupply)}
                   <button on:click={mint}><h2>MINT<img width="32px" src="/imgs/check-mark.svg" alt=""> </h2></button>
+                  {:else}
+                  <button><h2>SOLD OUT</h2></button>
+                  {/if}
                 {/if}
             </div>
             {/if}
