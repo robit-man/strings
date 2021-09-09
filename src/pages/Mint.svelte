@@ -34,7 +34,7 @@
                 <h1>MINT A SPACEPEPE</h1>
                 <p>Only one per account.</p>
                 {#if $totalSupply > 0}
-                <p>{$totalSupply}/100 Minted</p>
+                <p>{$totalSupply}/99 Minted</p>
                 {/if}
             </div>
             <div class="mint-image-wrapper">
