@@ -37,43 +37,33 @@ var metadata = {
 
 <main>
   <div class="wrapper">
-        <Swiper style="height:max-content!important;margin:auto!important;"
-        spaceBetween={50}
-        slidesPerView={1} pagination='{{
-          "clickable": true
-        }}'
-        on:slideChange={() => console.log('slide change')}
-        on:swiper={(e) => console.log(e.detail[0])}
-      >
-      {#if !$nfts }
-      <SwiperSlide>      
-        <Card 
-        nfttitle="NOT CONNECTED"
-        desc="Nft Description Placeholder"
-        owner="NO ONE"
-        protocol='ERC-721'
-          >
-          <div><button on:click={connectWallet}>CONNECT WALLET</button></div>
-        </Card>
-      </SwiperSlide>
+    <div class="spacepepes-story" transition:fade>
+      <h1 class="pepe-title glow" transition:slide >SPACEPEPES</h1>
+        <div id="board" transition:slide >
+          <p>
+            11 SpacePepe's from the planet Serpo are on a Space Expedition from the star system Zeta Reticuli. <br> <br>
+            They have made contact with Earth through Lieutenant Pepe to a group of anon artists and developers and have requested to be minted into NFTs and distributed to the public for awareness that extraterrestrial contact has been established. 
+            <br> <br>They have foretold of another 88 of their brothers and sisters that are on their way to Earth and 1 special surprise! 🌎
+          </p>
+        </div>
 
-      {:else}     
-      {#each $nfts as nft} 
-      <SwiperSlide>      
-        <Card 
-        nfttitle="{metadata['name']} #{nft['nftId']+1}"
-        desc="{metadata['description']}"
-        owner="Owner I"
-        nftimage='/pepes/{nft['image']}'
-        protocol='ERC-721'
-          />
-          <img class="scrollimg" src="/imgs/Bar-Arrow.gif" alt="" />
+    </div>
+<div class="galaxies">
+  
+        <a href="https://ftm.spacepepes.com"><div id='galaxy'>
+          <h2>FTM</h2>
+        </div></a>
+
+
+        <a href="https://bsc.spacepepes.com">
+        <div id='galaxy'>
+         <h2>BSC</h2>
+        </div></a>
         
-      </SwiperSlide>
-      {/each}
-      
-      {/if}
-    </Swiper>
+        <a href="https://opensea.io/collection/spacepepes">
+          <div id='galaxy'>
+           <h2>ETH</h2>
+          </div></a>      </div>
     <footer transition:slide >
     </footer>
   </div>
@@ -472,7 +462,21 @@ body {
   background: #000;
   perspective: 340px;
 }
-
+.spacepepes-story{
+  text-align:center;
+  margin-top:-5rem;
+  display:flex;
+  flex-flow:column;
+  width: auto;
+  margin:auto;
+  z-index:5;
+  position: relative;  
+  margin-bottom:5rem;
+  transform: perspective(620px) rotateX(25deg);
+}
+.galaxies{
+  display:flex;position:relative;z-index:10;flex-flow:wrap;justify-content:center;margin:auto;width:1024px;
+}
 .nav-row{
   position: relative;
   height:100px;top:0px;width:calc(100vw - 4rem);
@@ -484,7 +488,7 @@ body {
 .wrapper{    
   position: relative;
     height: auto;
-    display: flex;
+    display: block;
     min-height: 70vh;
 }
 button{
@@ -492,10 +496,37 @@ button{
 }
 button:hover{ background-color:white;
 }    
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
 
-
+  .galaxies > a:nth-child(odd){
+  margin-left:auto;
+  margin-top:auto!important;
 }
+.galaxies > a:nth-child(even){
+  filter:hue-rotate(50deg);
+  margin-right:auto;
+  margin-top:auto!important;
+}
+.galaxies > a:nth-child(n+3){
+  filter:hue-rotate(-50deg);
+  margin-left:auto;
+  margin-top:auto!important;
+}.spacepepes-story {padding:2rem;transform:perspective(620px) rotateX(5deg);}
+.galaxies{max-width:100%;}
+.pepe-title{font-size:3rem!important;padding-bottom:2rem;}
+}#board {color:#bcff01;
+  font-size:1.2rem;
+  max-width:100%;
+  transform-origin: 50% 100%;
+  text-align: justify;
+  position: relative;
+  width:512px;
+  margin:auto;
+  margin-top:-3rem;
+  font-weight: bold;
+  overflow: hidden;
+}.pepe-title{font-size:5rem;text-align:center;}
+
 .scrollimg{
   mix-blend-mode: screen;
          filter: brightness(0.5);
@@ -547,6 +578,61 @@ button:hover{ background-color:white;
   to {
     transform: translateZ($depth + px);
   }
+}
+.glow{animation:glow 5s linear infinite;}
+@keyframes glow {
+  0%{text-shadow:0px 0px 0px white;}
+  50%{text-shadow:0px 0px 20px white;}
+  100%{text-shadow:0px 0px 0px white;}
+}
+#galaxy{
+  transition:filter 0.2s linear;
+  box-shadow: inset 0px 0px 20px 20px black;
+  margin:auto;
+  margin-top: -5em;
+  width: 550px;
+  display:flex;flex-flow:wrap;justify-content:center;
+  height: 550px;
+  border-radius: 100%;
+  background-image: url('https://www.filterforge.com/filters/1760.jpg');
+  background-size: cover;
+  animation: spin 120s infinite linear;
+}
+#galaxy:hover{filter:brightness(1.2);}
+#galaxy > h2{
+  font-size:3rem;text-shadow:0px 5px rgba(0,0,0,0.5), 0px 4px 20px white;
+  animation: spin2 120s infinite linear;
+  height: max-content;
+  margin: auto;
+
+}
+.galaxies > a:nth-child(odd){
+  margin-left:40%;
+  margin-top:0rem;
+}
+.galaxies > a:nth-child(even){
+  filter:hue-rotate(50deg);
+  margin-right:40%;
+  margin-top:-10rem;
+}
+.galaxies > a:nth-child(n+3){
+  filter:hue-rotate(-50deg);
+  margin-left:40%;
+  margin-top:-10rem;
+}
+@keyframes spin{
+  0%{
+    transform: rotateX(40deg) rotate(360deg)}
+  100%{
+    transform: rotateX(40deg) rotate(0deg)}
+  
+}
+@keyframes spin2{
+  0%{
+    transform:rotatez(0deg)}
+  100%{
+    transform:rotatez(360deg)}
+  
 }
 
 @keyframes fade1 {
