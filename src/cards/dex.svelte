@@ -1,9 +1,9 @@
 <script>
     //Help import data from opensea <3 
     export let nftlink = 'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/42177050677546159779710000316165471247211713436920374376455667151256854462465';
-    export let nftimage = 'https://lh3.googleusercontent.com/gzNYAoekV_UlhEn47l7UIaQ5Bs3Rsgz9QL5ITQ8BN53SP5NSlU2CjfHQXGzGhVw1JJ2dy7qUHVqcbyQs21jEF5YnO8_sAqAS_mRH=w600';
-    export let nfttitle = 'Space Pepe #1';
-    export let desc = '11 SpacePepes from the planet Serpo are on a Space Expedition from the star system Zeta Reticuli. ';
+    export let nftimage = '/imgs/wind.svg';
+    export let nfttitle = 'STRING #1';
+    export let desc = 'Strings are a collection of unidimensional objects, pure in form, and vibrant in their variety of stochastic behavior. ';
     export let protocol = 'ERC-1155';
     export let owner = 'CA785C';
     export let ownerlink = undefined;
@@ -26,7 +26,7 @@
         </div>
         <div class="desc">
             <h1>{nfttitle}</h1>
-            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:#bcff01;"></div>
+            <div style="margin:0.5rem 0rem;height:3px;width:4rem;margin-right:calc(100% - 4rem);background:white;border-radius:5px;"></div>
             <p>{desc}</p>
             {#if ownerlink}
                 <p>OWNED BY: <a style="display:inline;" href="{ownerlink}"><b>{owner}</b></a></p>
@@ -42,10 +42,10 @@
 <style>
     .card{
         text-align: left;
-        background: linear-gradient(45deg, #350b32c4, rgba(80, 0, 255, 0.52));
         width: auto;
         min-height: 480px;
-        box-shadow: 0px 15px 60px -5px rgba(20, 24, 223, 0.32);
+        background: #2229;
+        box-shadow:  40px 40px 40px #777;
         border-radius: 30px;
         padding: 30px;
         max-width: calc(100vw - 10rem);
@@ -58,7 +58,6 @@
         width:100%;
     }
     p > a{
-        color:#bcff01;
     }
     @keyframes float {
         0%{transform:translatey(0px);}
@@ -75,7 +74,7 @@
         position: relative;
         margin-bottom:2rem;
         z-index: 2;
-        border-radius: 15px;
+        border-radius: 50%;
         z-index: 1;        
         box-shadow: 0px 15px 35px -5px rgba(0, 0, 0, 0.67);
 

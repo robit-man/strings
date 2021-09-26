@@ -39,12 +39,7 @@
         <div class="nav-row">
           <div class="icon-box">
           </div>
-          <div class="nav-links">
-            <a target="_blank" href="https://twitter.com/spacepepes"><img width="64px" style="filter:invert(1);" src="/imgs/twitter.png" alt="">
-            </a>
-            <a target="_blank" href="https://discord.gg/5WrhVV5vJA"><img width="64px" style="filter:invert(1);" src="/imgs/discord.png" alt="">
-                </a>
-          </div>
+          
         </div>
       </header>
     <Router url="{url}">
@@ -93,11 +88,6 @@ header{z-index:5;position:relative;}
 footer{position:relative;display:flex;flex-flow:row;justify-content:center;bottom:0px;left:0px;width:100vw;height:auto;}
 
 
-.nav-links{display:flex;flex-flow:row;justify-content:space-around;}
-.nav-links > a{margin:1rem;transition:transform 0.2s ease;}
-.icon-box > a{margin:1rem;transition:transform 0.2s ease;}
-.nav-links > a:hover{transform:scale(1.1);}
-.icon-box > a:hover{transform:scale(1.1);}
 .mint{
     transition: transform 0.2s ease;
 }
