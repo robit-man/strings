@@ -107,10 +107,79 @@ var metadata = {
   <img src="/imgs/arrowbottom.svg" alt="" class="arrowtop">
   <div class="constraint"> 
     <p style="font-size:3rem;font-weight:bold;">Attributes and Rarities Showcase</p>
+<div class="attribute-list-wrapper">
+    
+  <div class="attribute-wrapper">
+    <div class="attribute-image">
+      <img src="/imgs/number.gif" style="width:256px;" alt="">
+    </div>
+    <div class="attribute-list">
+      <p style="font-size:3rem;font-weight:bold;margin:unset;">Number Of Strings</p>
+      <p>Single: 100 (1.8%) <br>
+        Double: 5,255 (94.6%) <br>
+        Triple: 200 (3.6%)</p>
+    </div>
+  </div>
+  <div class="attribute-wrapper">
+    <div class="attribute-image">
+      <img src="/imgs/color.gif" style="width:256px;" alt="">
+    </div>
+    <div class="attribute-list">
+      <p style="font-size:3rem;font-weight:bold;margin:unset;">Color</p>
+      <p>White: 111 (2%) <br>
+        Teal: 222 (4%) <br>
+        Red: 444 (8%) <br>
+        Purple: 666 (12%) <br>
+        Pink: 777 (14%) <br>
+        Green: 999 (18%) <br>
+        Yellow: 1111 (20%) <br>
+        Blue: 1225 (22%)</p>
+    </div>
+  </div>
+  <div class="attribute-wrapper">
+    <div class="attribute-image">
+      <img src="/imgs/type.gif" style="width:256px;" alt="">
+    </div>
+    <div class="attribute-list">
+      <p style="font-size:3rem;font-weight:bold;margin:unset;">Type</p>
+      <p>Tubular: 200 (3.6%) <br>
+        Disconnecting: 555 (10%) <br>
+        Cartoon: 800 (14.4%) <br>
+        Wobbly: 1000 (18%) <br>
+        Reversed: 1000 (18%) <br>
+        Basic: 2000 (36%)</p>
+    </div>
+  </div>
+  <div class="attribute-wrapper">
+    <div class="attribute-image">
+      <img src="/imgs/effect.gif" style="width:256px;" alt="">
+    </div>
+    <div class="attribute-list">
+      <p style="font-size:3rem;font-weight:bold;margin:unset;">Effect</p>
+      <p>Tri Morph: 222 (4%) <br>
+        Doubled: 333 (6%) <br>
+        Slowmo: 407 (7.3%) <br>
+        Soundwave: 629 (11.3%) <br>
+        Electrify: 740 (13.3%) <br>
+        Xray: 962 (17.3%) <br>
+        Glow: 1074 (19.4%) <br>
+        Basic: 1188 (21.4%)</p>
+    </div>
+  </div>
+  <div class="attribute-wrapper">
+    <div class="attribute-image">
+      <img src="/imgs/background.gif" style="width:256px;" alt="">
+    </div>
+    <div class="attribute-list">
+      <p style="font-size:3rem;font-weight:bold;margin:unset;">Background</p>
+      <p>Glitch: 300 (5.4%) <br>
+        Dark: 700 (12.6%) <br>
+        Clouded: 1755 (31.6%) <br>
+        Basic Black: 2800 (50.4%)</p>
+    </div>
+  </div>
 
-
-
-
+  </div>
   </div>
 </section>
 <section class="fourth">
@@ -121,6 +190,10 @@ var metadata = {
     <a target="_blank" href="https://twitter.com/spacepepes"><img width="64px" style="filter:invert(1);" src="/imgs/twitter.png" alt="">
     </a>
     <a target="_blank" href="https://discord.gg/5WrhVV5vJA"><img width="64px" style="filter:invert(1);" src="/imgs/discord.png" alt="">
+        </a>
+    <a target="_blank" href="https://discord.gg/5WrhVV5vJA"><img width="64px" style="filter:invert(1);" src="/imgs/medium.svg" alt="">
+        </a>
+    <a target="_blank" href="https://discord.gg/5WrhVV5vJA"><img width="64px" style="filter:invert(1);" src="/imgs/telegram.svg" alt="">
         </a>
   </div>
 <h1>STRINGS</h1></footer>
@@ -139,6 +212,28 @@ var metadata = {
   }
   .box-img{width: 30%;      margin:2rem;
 }
+@media screen and (max-width:900px){
+  .box3 {
+      border-radius: 20px;
+      margin:2rem;
+      color:#333;
+      width: calc(100% - 3rem)!important;
+      min-height:280px;
+      text-align:left;
+        height: auto;
+       
+      /*animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite alternate;*/
+      /* animation-fill-mode: forwards; */
+    }
+    
+  .image-text-row{
+    display:flex;
+    flex-flow:column!important;
+    justify-content:space-between;
+  }
+  .image-text-row > img{margin:auto;margin-top:2rem;}
+  .image-text-row:nth-child(odd){flex-flow:wrap-reverse!important;}
+}
   .buttonicon{margin-left:1.5rem;height:20px;width:20px;filter:invert(1);}
   .hero-h1{margin-top:unset;animation:glow 5s ease infinite;font-size: 7vw; letter-spacing:4px;margin-bottom:unset;}
   .hero{z-index:5;width:1024px;margin:auto;position:relative;}
@@ -150,7 +245,46 @@ var metadata = {
   .box > h1{margin:unset!important;text-align:left;color:#555;}
   .box > p{text-align:left;color:#555;
   }
-  .image-text-row{display:flex;flex-flow:row;justify-content:space-between;}
+  .attribute-image > img{border-radius: 512px;
+overflow: hidden;}
+  .attribute-list-wrapper{
+    display:flex;
+    flex-flow:wrap;
+    justify-content:center;
+    padding-bottom:6rem;}
+  .attribute-wrapper{
+    display: flex;
+    width:512px;
+    text-align:left;
+    margin:1rem 0rem;
+  }
+  .attribute-image{
+    mix-blend-mode: color;
+    position:absolute;
+    z-index:1;
+    padding:1rem;
+    width:calc(256px + 2rem);
+    display:flex;
+    flex-flow:wrap;
+    justify-content:center;
+    height:calc(256px + 2rem);
+    background:black;
+    border-radius:256px;
+    overflow:hidden;
+  }
+  .attribute-list{
+    position:relative;
+    z-index:2;
+    margin-left:200px;
+    padding:1rem;
+    height: min-content;
+  }
+  .image-text-row{
+    display:flex;
+    flex-flow:row;
+    justify-content:space-between;
+  }
+  .image-text-row > img{filter:invert(0.2);}
   .button-row{display:flex;flex-flow:wrap;justify-content: center;}
   button > img{transition:all 0.2s ease;}
   button{font-weight:400;margin:1rem; min-width:150px;}

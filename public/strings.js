@@ -91,7 +91,7 @@ class Stage {
         time: { type: "f", value: 0.0 },
         xScale: { type: "f", value: 1.0 },
         yScale: { type: "f", value: 0.5 },
-        distortion: { type: "f", value: 0.050 }
+        distortion: { type: "f", value: 0.070 }
       };
   
       this.stage = stage;
