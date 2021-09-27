@@ -259,6 +259,7 @@ overflow: hidden;}
     margin:1rem 0rem;
   }
   .attribute-image{
+    pointer-events:none;
     mix-blend-mode: color;
     position:absolute;
     z-index:1;
