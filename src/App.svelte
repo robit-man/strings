@@ -32,7 +32,7 @@
 <div class="main">
     <Audio controls={false}>
         <source
-          src="/camino.mp3"
+          src="/"
           type="audio/mp3" />
       </Audio>
 	<header>
