@@ -232,7 +232,10 @@ var metadata = {
     margin-left:0px!important;
     margin-top:156px!important;
     padding:1rem;
+    padding-left:1.5rem!important;
     border-left:1px solid black;
+    border-bottom:1px solid black;
+    border-bottom-left-radius:1rem;
     padding-bottom:0px!important;
     padding-top:128px!important;
     height: min-content;
