@@ -212,47 +212,16 @@ var metadata = {
   }
   .box-img{width: 30%;      margin:2rem;
 }
-@media screen and (max-width:900px){
-  .box3 {
-      border-radius: 20px;
-      margin:2rem;
-      color:#333;
-      width: calc(100% - 3rem)!important;
-      min-height:280px;
-      text-align:left;
-        height: auto;
-       
-      /*animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite alternate;*/
-      /* animation-fill-mode: forwards; */
-    }
-    .attribute-wrapper{width: 320px!important;}
-  .attribute-list{
-    position:relative;
-    z-index:2;
-    margin-left:0px!important;
-    margin-top:156px!important;
-    padding:1rem;
-    padding-left:1.5rem!important;
-    border-left:1px solid black;
-    border-bottom:1px solid black;
-    border-bottom-left-radius:1rem;
-    padding-bottom:0px!important;
-    padding-top:128px!important;
-    height: min-content;
-  }
-  .image-text-row{
-    display:flex;
-    flex-flow:column!important;
-    justify-content:space-between;
-  }
-  .image-text-row > img{margin:auto;margin-top:2rem;}
-  .image-text-row:nth-child(odd){flex-flow:wrap-reverse!important;}
-}
   .buttonicon{margin-left:1.5rem;height:20px;width:20px;filter:invert(1);}
   .hero-h1{margin-top:unset;animation:glow 5s ease infinite;font-size: 7vw; letter-spacing:4px;margin-bottom:unset;}
   .hero{z-index:5;width:1024px;margin:auto;position:relative;}
-  .stringhero{position:absolute;left:0px;top:0px;overflow:hidden;width:100vw;height:100%;min-height:100vh;}
-  .first{display:flex;height:100vh;margin-top: calc(-100px - 2rem);}
+  .stringhero{    backdrop-filter: blur(10px);mix-blend-mode:hard-light;position:absolute;left:0px;top:0px;overflow:hidden;width:100vw;height:100%;min-height:100vh;}
+  .first{background: url(https://media1.giphy.com/media/4bhs1boql4XVJgmm4H/giphy.gif?cid=ecf05e476cu25xg7j67wk3x1o542wzlvkqebgld9717y1m03&rid=giphy.gif&ct=g);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+background-size: cover;
+background-position: center;background-attachment:fixed;display:flex;height:100vh;margin-top: calc(-100px - 2rem);}
   .second{background:#f0f0f0;margin:unset;}
   .third{background:#BABABA;}
   .fourth{background:#222;}
@@ -268,6 +237,8 @@ overflow: hidden;}
     padding-bottom:6rem;}
   .attribute-wrapper{
     display: flex;
+    flex-flow: column;
+    justify-content: center;
     width:512px;
     min-height:300px;
     text-align:left;
@@ -286,13 +257,7 @@ overflow: hidden;}
     background:#0a0a0a;
     border-radius:256px;
     overflow:hidden;
-  }
-  .attribute-list{
-    position:relative;
-    z-index:2;
-    margin-left:128px;
-    padding:1rem;
-    height: min-content;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
   }
   .image-text-row{
     display:flex;
@@ -409,4 +374,54 @@ left: -5vw;}
                      2px 2px 2px #ffffff inset;
       }
       }
+      
+@media screen and (min-width:900px){
+
+  .attribute-list{
+    position:relative;
+    z-index:2;background: linear-gradient(to right, #373737, transparent);
+    border-radius: 1rem;
+    margin-left:128px;
+    padding:1rem;
+    padding-left:2rem;
+    height: min-content;
+  }
+}
+@media screen and (max-width:900px){
+  .box3 {
+      border-radius: 20px;
+      margin:2rem;
+      color:#333;
+      width: calc(100% - 3rem)!important;
+      min-height:280px;
+      text-align:left;
+        height: auto;
+       
+      /*animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite alternate;*/
+      /* animation-fill-mode: forwards; */
+    }
+    .attribute-wrapper{width: 320px!important;}
+  .attribute-list{
+    position:relative;
+    z-index:2;
+    margin-left:0px!important;
+    margin-top:156px!important;
+    padding:1rem;
+    padding-left:1.5rem!important;
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+    border-bottom-left-radius:1rem;
+    padding-bottom:0px!important;
+    background: unset;
+    padding-top:128px!important;
+    height: min-content;
+  }
+  .image-text-row{
+    display:flex;
+    flex-flow:column!important;
+    justify-content:space-between;
+  }
+  .image-text-row > img{margin:auto;margin-top:2rem;}
+  .image-text-row:nth-child(odd){flex-flow:wrap-reverse!important;}
+}
 </style>
