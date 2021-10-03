@@ -222,7 +222,14 @@ var metadata = {
     background-size: auto;
 background-size: cover;
 background-position: center;background-attachment:fixed;display:flex;height:100vh;margin-top: calc(-100px - 2rem);}
-  .second{background:#f0f0f0;margin:unset;}
+  .second{ 
+    box-shadow: inset 0px 0px 30px 50px #f0f0f0;   
+    background-color: #f0f0f0;
+    margin: unset;
+    background-image: url(https://pluspng.com/img-png/cool-designs-png-vector-circle-design-png-google-search-2500.png);
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-position:center;margin:unset;}
   .third{background:#BABABA;}
   .fourth{background:#222;}
   .box > h1{margin:unset!important;text-align:left;color:#555;}
@@ -285,7 +292,6 @@ width: 105vw;
 z-index: 8;
 left: -5vw;}
     .container {padding-bottom:6rem;padding-top:3rem;
-      background: #f0f0f0;
       box-sizing: border-box;
       display: flex;
       flex-flow:wrap;
