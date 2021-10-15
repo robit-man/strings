@@ -241,8 +241,6 @@ background-position: center;background-attachment:fixed;display:flex;height:100v
     box-shadow: inset 0px 0px 30px 50px #f0f0f0;   
     background-color: #f0f0f0;
     margin: unset;
-    background-image: url(https://pluspng.com/img-png/cool-designs-png-vector-circle-design-png-google-search-2500.png);
-    background-blend-mode: overlay;
     background-attachment: fixed;
     background-position:center;margin:unset;}
   .third{background-color: #BABABA;
