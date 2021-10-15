@@ -45,9 +45,24 @@ var metadata = {
         <button>MINT<img src="/imgs/plus.svg" class="buttonicon" alt=""></button>
         <button>STAKE<img src="/imgs/inside.svg" class="buttonicon" alt=""></button>
       </div>
-    </div>
-    <img src="/imgs/wave.svg" class="herobottom" alt="">
-<iframe class="stringhero" src="/strings.html" frameborder="0"></iframe>  
+    </div><iframe class="stringhero" src="https://webglsamples.org/electricflower/electricflower.html" frameborder="0" style="opacity:0.5;background-color: black;
+    mix-blend-mode: hard-light;overflow:hidden;border-radius:500px;"></iframe>  
+
+    <div style="position:absolute;bottom:-10px;left:0px;">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#f0f0f0" />
+      </g>
+      </svg>
+      </div>
+
 </section>
 <section class="second">
 
@@ -215,8 +230,8 @@ var metadata = {
   .buttonicon{margin-left:1.5rem;height:20px;width:20px;filter:invert(1);}
   .hero-h1{margin-top:unset;animation:glow 5s ease infinite;font-size: 7vw; letter-spacing:4px;margin-bottom:unset;}
   .hero{z-index:5;width:1024px;margin:auto;position:relative;}
-  .stringhero{    backdrop-filter: blur(10px);mix-blend-mode:hard-light;position:absolute;left:0px;top:0px;overflow:hidden;width:100vw;height:100%;min-height:100vh;}
-  .first{background: url(https://media1.giphy.com/media/4bhs1boql4XVJgmm4H/giphy.gif?cid=ecf05e476cu25xg7j67wk3x1o542wzlvkqebgld9717y1m03&rid=giphy.gif&ct=g);
+  .stringhero{    backdrop-filter: blur(10px);position:absolute;left:0px;top:0px;overflow:hidden;width:100vw;height:100%;min-height:100vh;}
+  .first{
     background-position-x: 0%;
     background-position-y: 0%;
     background-size: auto;
@@ -230,7 +245,14 @@ background-position: center;background-attachment:fixed;display:flex;height:100v
     background-blend-mode: overlay;
     background-attachment: fixed;
     background-position:center;margin:unset;}
-  .third{background:#BABABA;}
+  .third{background-color: #BABABA;
+background-image: url(/imgs/glitchstring.gif);
+background-blend-mode: lighten;
+background-attachment: fixed;
+background-position: center;
+margin: unset;
+background-repeat: no-repeat;
+background-size: cover;}
   .fourth{background:#222;}
   .box > h1{margin:unset!important;text-align:left;color:#555;}
   .box > p{text-align:left;color:#555;
@@ -429,5 +451,54 @@ left: -5vw;}
   }
   .image-text-row > img{margin:auto;margin-top:2rem;}
   .image-text-row:nth-child(odd){flex-flow:wrap-reverse!important;}
+}
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
 }
 </style>
