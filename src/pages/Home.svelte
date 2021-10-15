@@ -46,8 +46,10 @@ var metadata = {
         <button>MINT<img src="/imgs/plus.svg" class="buttonicon" alt=""></button>
         <button>STAKE<img src="/imgs/inside.svg" class="buttonicon" alt=""></button>
       </div>
-    </div><iframe class="stringhero" src="https://webglsamples.org/electricflower/electricflower.html" frameborder="0" style="opacity:0.5;background-color: black;
-    mix-blend-mode: hard-light;overflow:hidden;width: calc(100vw + 400px);
+    </div><iframe class="stringhero" src="https://webglsamples.org/electricflower/electricflower.html" frameborder="0" style="background-color: black;
+    overflow:hidden;width: calc(100vw + 400px);height: 100vh;
+    position: fixed;filter: opacity(0.8)contrast(0.8)saturate(2)blur(3px);
+    z-index: -1;
     margin-left: -200px;"></iframe>  
 
     <div style="width: 100vw;position:absolute;bottom:-10px;left:0px;">
