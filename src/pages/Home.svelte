@@ -34,8 +34,9 @@ var metadata = {
      "image": 'https://spacepepes.com/pepes/',
      "external_url": 'https://spacepepes.com/pepes/'
 };
-</script>
 
+
+</script>
 <main>
   <section class="fw first">
     <div class="constraint hero">
@@ -46,7 +47,8 @@ var metadata = {
         <button>STAKE<img src="/imgs/inside.svg" class="buttonicon" alt=""></button>
       </div>
     </div><iframe class="stringhero" src="https://webglsamples.org/electricflower/electricflower.html" frameborder="0" style="opacity:0.5;background-color: black;
-    mix-blend-mode: hard-light;overflow:hidden;border-radius:500px;"></iframe>  
+    mix-blend-mode: hard-light;overflow:hidden;width: calc(100vw + 400px);
+    margin-left: -200px;"></iframe>  
 
     <div style="width: 100vw;position:absolute;bottom:-10px;left:0px;">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
