@@ -48,7 +48,7 @@ var metadata = {
     </div><iframe class="stringhero" src="https://webglsamples.org/electricflower/electricflower.html" frameborder="0" style="opacity:0.5;background-color: black;
     mix-blend-mode: hard-light;overflow:hidden;border-radius:500px;"></iframe>  
 
-    <div style="position:absolute;bottom:-10px;left:0px;">
+    <div style="width: 100vw;position:absolute;bottom:-10px;left:0px;">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
       <defs>
@@ -489,8 +489,8 @@ left: -5vw;}
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:40px;
-    min-height:40px;
+    height:80px;
+    width:100%;
   }
   .content {
     height:30vh;
