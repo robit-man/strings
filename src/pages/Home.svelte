@@ -122,7 +122,7 @@ var metadata = {
 </div>
 
 </section>
-<section class="third">
+<section class="third" style="overflow:hidden;">
   <div style="width: 100vw;position:relative;top:-10px;left:0px;transform:rotate(180deg);">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -212,10 +212,26 @@ var metadata = {
 
   </div>
   </div>
+  <iframe style="    position: static;
+  width: 100vw;
+  height: 100vh;margin-top: -100vh;
+  mix-blend-mode: lighten;" src="/strings.html" frameborder="0"></iframe>
 </section>
 <section class="fourth">
-  <img src="/imgs/footer.svg" alt="" class="arrowtop">
-  <div class="constraint"> 
+  <div style="width: 100vw;position:relative;top:-10px;left:0px;transform:rotate(180deg);">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.5" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.1)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#BABABA" />
+    </g>
+    </svg>
+    </div>  <div class="constraint"> 
    
   <footer><div class="nav-links">
     <a target="_blank" href="https://twitter.com/spacepepes"><img width="64px" style="filter:invert(1);" src="/imgs/twitter.png" alt="">
@@ -260,7 +276,6 @@ background-position: center;background-attachment:fixed;display:flex;height:100v
     background-attachment: fixed;
     background-position:center;margin:unset;}
   .third{background-color: #BABABA;
-background-image: url(/imgs/glitchstring.gif);
 background-blend-mode: lighten;
 background-attachment: fixed;
 background-position: center;
@@ -421,12 +436,14 @@ left: -5vw;}
 
   .attribute-list{
     position:relative;
-    z-index:2;background: linear-gradient(to right, #373737, transparent);
-    border-radius: 1rem;
-    margin-left:128px;
+    z-index:2;background: linear-gradient(to right, white, transparent);
+    border-radius: 0px;
+    margin-left:158px;
     padding:1rem;
     padding-left:2rem;
-    height: min-content;
+    color:#333;
+    height: 288px;
+    display:flex;flex-flow:column;justify-content:center;
   }
 }
 @media screen and (max-width:900px){
@@ -442,7 +459,7 @@ left: -5vw;}
       /*animation: anime 3s cubic-bezier(0.16, 1, 0.3, 1) 1s infinite alternate;*/
       /* animation-fill-mode: forwards; */
     }
-    .attribute-wrapper{width: 320px!important;}
+    .attribute-wrapper{width: 320px!important;padding: 0.5rem;}
   .attribute-list{
     position:relative;
     z-index:2;
@@ -450,8 +467,6 @@ left: -5vw;}
     margin-top:156px!important;
     padding:1rem;
     padding-left:1.5rem!important;
-    border-left:1px solid black;
-    border-bottom:1px solid black;
     border-bottom-left-radius:1rem;
     padding-bottom:0px!important;
     background: unset;
